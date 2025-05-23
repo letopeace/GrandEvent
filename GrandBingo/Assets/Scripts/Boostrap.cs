@@ -9,12 +9,17 @@ public class Boostrap : MonoBehaviour
 
     
     public bool turn = true;
-    public bool bid = true;
+    public bool bid = false;
     public bool fraud = false;
     public bool shoot = false;
 
+	private void Start()
+	{
+		bid = true;
+	}
 
-    private void Update()
+
+	private void Update()
     {
         if (bid)
         {

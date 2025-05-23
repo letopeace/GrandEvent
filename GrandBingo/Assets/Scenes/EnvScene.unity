@@ -122,6 +122,35 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &13859935 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1838926785277199670, guid: bd5c963a3d9ad7441a289cbc4d51f2f7, type: 3}
+  m_PrefabInstance: {fileID: 3865342686991044460}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &13859936 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1941607754984652778, guid: bd5c963a3d9ad7441a289cbc4d51f2f7, type: 3}
+  m_PrefabInstance: {fileID: 3865342686991044460}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &13859937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13859935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f00c0411d52bbf748a1543cfaea3d215, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1049086284}
+  opponent: {fileID: 685779125}
+  round: 0
+  turn: 1
+  bid: 0
+  fraud: 0
+  shoot: 0
 --- !u!4 &22811760 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8123077160151141418, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
@@ -138,6 +167,10 @@ PrefabInstance:
     - target: {fileID: 1170552510500885959, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
       propertyPath: m_Name
       value: Fishka Lungs
+      objectReference: {fileID: 0}
+    - target: {fileID: 1211602492197212983, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
+      propertyPath: up
+      value: 1.82
       objectReference: {fileID: 0}
     - target: {fileID: 1784147767285025474, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
       propertyPath: m_Materials.Array.data[2]
@@ -215,6 +248,10 @@ PrefabInstance:
     - target: {fileID: 1170552510500885959, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
       propertyPath: m_Name
       value: Fishka Liver
+      objectReference: {fileID: 0}
+    - target: {fileID: 1211602492197212983, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
+      propertyPath: up
+      value: 1.82
       objectReference: {fileID: 0}
     - target: {fileID: 1784147767285025474, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
       propertyPath: m_Materials.Array.data[2]
@@ -392,9 +429,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   head: {fileID: 580256654}
+  cam: {fileID: 0}
   startRot: {x: 0, y: 0, z: 0}
   maxRotation: {x: 30, y: 60}
-  sensitivity: 0.1
+  sensitivity: 0.05
 --- !u!4 &252114784 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8123077160151141418, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
@@ -412,6 +450,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fishka Hand
       objectReference: {fileID: 0}
+    - target: {fileID: 1211602492197212983, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
+      propertyPath: up
+      value: 1.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 1211602492197212983, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
+      propertyPath: boostrap
+      value: 
+      objectReference: {fileID: 13859937}
     - target: {fileID: 1784147767285025474, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
       propertyPath: m_Materials.Array.data[2]
       value: 
@@ -489,6 +535,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fishka Leg
       objectReference: {fileID: 0}
+    - target: {fileID: 1211602492197212983, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
+      propertyPath: up
+      value: 1.82
+      objectReference: {fileID: 0}
     - target: {fileID: 1784147767285025474, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
       propertyPath: m_Materials.Array.data[2]
       value: 
@@ -554,6 +604,95 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
+--- !u!1 &461487902
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 461487903}
+  m_Layer: 0
+  m_Name: Walls
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &461487903
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 461487902}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1879102003}
+  - {fileID: 782953982}
+  - {fileID: 491595794}
+  - {fileID: 1382494646}
+  - {fileID: 1762061909}
+  m_Father: {fileID: 13859936}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &491595793
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 491595794}
+  - component: {fileID: 491595795}
+  m_Layer: 0
+  m_Name: Cube (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &491595794
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 491595793}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -166, y: 46, z: 348}
+  m_LocalScale: {x: 940.8535, y: 714.7846, z: 215.12158}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 461487903}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &491595795
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 491595793}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &494794138
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -566,6 +705,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fishka Leg
       objectReference: {fileID: 0}
+    - target: {fileID: 1211602492197212983, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
+      propertyPath: up
+      value: 1.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 1211602492197212983, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
+      propertyPath: boostrap
+      value: 
+      objectReference: {fileID: 13859937}
     - target: {fileID: 1784147767285025474, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
       propertyPath: m_Materials.Array.data[2]
       value: 
@@ -653,6 +800,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fishka Pochka
       objectReference: {fileID: 0}
+    - target: {fileID: 1211602492197212983, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
+      propertyPath: up
+      value: 1.82
+      objectReference: {fileID: 0}
     - target: {fileID: 1784147767285025474, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
       propertyPath: m_Materials.Array.data[2]
       value: 
@@ -734,6 +885,10 @@ PrefabInstance:
     - target: {fileID: 1170552510500885959, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
       propertyPath: m_Name
       value: Fishka Death
+      objectReference: {fileID: 0}
+    - target: {fileID: 1211602492197212983, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
+      propertyPath: up
+      value: 1.82
       objectReference: {fileID: 0}
     - target: {fileID: 1784147767285025474, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -844,6 +999,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fishka Death
       objectReference: {fileID: 0}
+    - target: {fileID: 1211602492197212983, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
+      propertyPath: up
+      value: 1.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 1211602492197212983, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
+      propertyPath: boostrap
+      value: 
+      objectReference: {fileID: 13859937}
     - target: {fileID: 1784147767285025474, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -946,6 +1109,98 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2775630528623835369, guid: 5c1220e625a889e42a0ba7bab6bfe5dc, type: 3}
   m_PrefabInstance: {fileID: 1679384143}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &685779122 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7173054984244622538, guid: b1ca19e8e18328b41916c970bcf03496, type: 3}
+  m_PrefabInstance: {fileID: 1042419048}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &685779123 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4026827672466344546, guid: b1ca19e8e18328b41916c970bcf03496, type: 3}
+  m_PrefabInstance: {fileID: 1042419048}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &685779125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 685779122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02e3646964e1b6b44b3bedfd772692d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boostrap: {fileID: 0}
+  animator: {fileID: 685779123}
+  handChip: {fileID: 0}
+  eyeChip: {fileID: 0}
+  legChip: {fileID: 0}
+  stomachChip: {fileID: 0}
+  lungsChip: {fileID: 0}
+  kidneyChip: {fileID: 0}
+  liverChip: {fileID: 0}
+  revolver: {fileID: 798835532}
+  handCount: 2
+  eyeCount: 2
+  legCount: 4
+  stomach: 1
+  lungs: 1
+  kidney: 1
+  liver: 1
+--- !u!1 &782953981
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 782953982}
+  - component: {fileID: 782953983}
+  m_Layer: 0
+  m_Name: Cube (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &782953982
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 782953981}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 139, y: 46, z: -8}
+  m_LocalScale: {x: 207.15889, y: 714.7846, z: 714.7846}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 461487903}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &782953983
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 782953981}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &798835531
 GameObject:
   m_ObjectHideFlags: 0
@@ -970,14 +1225,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 798835531}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.8492178, z: -0, w: 0.5280428}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.997, y: 1.599, z: 0.105}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 673175513}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: -836.253, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &818998173
 GameObject:
   m_ObjectHideFlags: 0
@@ -1126,7 +1381,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7173054984244622538, guid: b1ca19e8e18328b41916c970bcf03496, type: 3}
+      insertIndex: 1
+      addedObject: {fileID: 685779125}
   m_SourcePrefab: {fileID: 100100000, guid: b1ca19e8e18328b41916c970bcf03496, type: 3}
 --- !u!1 &1049086281 stripped
 GameObject:
@@ -1154,6 +1412,35 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1049086284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049086281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02e3646964e1b6b44b3bedfd772692d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boostrap: {fileID: 13859937}
+  animator: {fileID: 1049086282}
+  handChip: {fileID: 0}
+  eyeChip: {fileID: 0}
+  legChip: {fileID: 0}
+  stomachChip: {fileID: 0}
+  lungsChip: {fileID: 0}
+  kidneyChip: {fileID: 0}
+  liverChip: {fileID: 0}
+  revolver: {fileID: 0}
+  handCount: 2
+  eyeCount: 2
+  legCount: 4
+  stomach: 1
+  lungs: 1
+  kidney: 1
+  liver: 1
 --- !u!4 &1076789603 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8123077160151141418, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
@@ -1167,6 +1454,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2951058785232849548, guid: b1ca19e8e18328b41916c970bcf03496, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3244070942278072492, guid: b1ca19e8e18328b41916c970bcf03496, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.2
@@ -1219,6 +1510,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5951803742266894084, guid: b1ca19e8e18328b41916c970bcf03496, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7173054984244622538, guid: b1ca19e8e18328b41916c970bcf03496, type: 3}
       propertyPath: m_Name
       value: enemy (3)
@@ -1230,6 +1525,9 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 175542230}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7173054984244622538, guid: b1ca19e8e18328b41916c970bcf03496, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1049086284}
     - targetCorrespondingSourceObject: {fileID: 7173054984244622538, guid: b1ca19e8e18328b41916c970bcf03496, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1049086282}
@@ -1246,6 +1544,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fishka Lungs
       objectReference: {fileID: 0}
+    - target: {fileID: 1211602492197212983, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
+      propertyPath: up
+      value: 1.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 1211602492197212983, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
+      propertyPath: boostrap
+      value: 
+      objectReference: {fileID: 13859937}
     - target: {fileID: 1784147767285025474, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
       propertyPath: m_Materials.Array.data[2]
       value: 
@@ -1323,6 +1629,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fishka Liver
       objectReference: {fileID: 0}
+    - target: {fileID: 1211602492197212983, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
+      propertyPath: up
+      value: 1.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 1211602492197212983, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
+      propertyPath: boostrap
+      value: 
+      objectReference: {fileID: 13859937}
     - target: {fileID: 1784147767285025474, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
       propertyPath: m_Materials.Array.data[2]
       value: 
@@ -1410,6 +1724,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fishka Eye
       objectReference: {fileID: 0}
+    - target: {fileID: 1211602492197212983, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
+      propertyPath: up
+      value: 1.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 1211602492197212983, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
+      propertyPath: boostrap
+      value: 
+      objectReference: {fileID: 13859937}
     - target: {fileID: 8123077160151141418, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.212
@@ -1455,6 +1777,59 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
+--- !u!1 &1382494645
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1382494646}
+  - component: {fileID: 1382494647}
+  m_Layer: 0
+  m_Name: Cube (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1382494646
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382494645}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -166, y: 46, z: -348}
+  m_LocalScale: {x: 940.8535, y: 714.7846, z: 215.12158}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 461487903}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1382494647
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382494645}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1399101386 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5565995610054338626, guid: bd5c963a3d9ad7441a289cbc4d51f2f7, type: 3}
@@ -1470,17 +1845,17 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 9
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: 3
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.6950314, y: 1.6948107, z: 0.8248972}
-  m_Center: {x: -0.005636304, y: -0.02350464, z: 0.4129587}
+  m_Size: {x: 8.957813, y: 7.9620647, z: 0.82489705}
+  m_Center: {x: -0.005636304, y: -0.023504654, z: 0.4129587}
 --- !u!1001 &1452399902
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1493,6 +1868,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fishka Stomach
       objectReference: {fileID: 0}
+    - target: {fileID: 1211602492197212983, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
+      propertyPath: up
+      value: 1.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 1211602492197212983, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
+      propertyPath: boostrap
+      value: 
+      objectReference: {fileID: 13859937}
     - target: {fileID: 1784147767285025474, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
       propertyPath: m_Materials.Array.data[2]
       value: 
@@ -1738,6 +2121,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fishka Pochka
       objectReference: {fileID: 0}
+    - target: {fileID: 1211602492197212983, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
+      propertyPath: up
+      value: 1.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 1211602492197212983, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
+      propertyPath: boostrap
+      value: 
+      objectReference: {fileID: 13859937}
     - target: {fileID: 1784147767285025474, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
       propertyPath: m_Materials.Array.data[2]
       value: 
@@ -1803,6 +2194,59 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
+--- !u!1 &1762061908
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1762061909}
+  - component: {fileID: 1762061910}
+  m_Layer: 0
+  m_Name: Cube (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1762061909
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1762061908}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -162, y: 321, z: -64}
+  m_LocalScale: {x: 798.72235, y: 69.366646, z: 798.72235}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 461487903}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1762061910
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1762061908}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1780330321
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1814,6 +2258,10 @@ PrefabInstance:
     - target: {fileID: 1170552510500885959, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
       propertyPath: m_Name
       value: Fishka Hand
+      objectReference: {fileID: 0}
+    - target: {fileID: 1211602492197212983, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
+      propertyPath: up
+      value: 1.82
       objectReference: {fileID: 0}
     - target: {fileID: 1784147767285025474, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
       propertyPath: m_Materials.Array.data[2]
@@ -1890,6 +2338,59 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8123077160151141418, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
   m_PrefabInstance: {fileID: 34193399}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1879102002
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1879102003}
+  - component: {fileID: 1879102004}
+  m_Layer: 0
+  m_Name: Cube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1879102003
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879102002}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -448, y: 46, z: -8}
+  m_LocalScale: {x: 207.15889, y: 714.7846, z: 714.7846}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 461487903}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1879102004
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879102002}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1961704729
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1901,6 +2402,10 @@ PrefabInstance:
     - target: {fileID: 1170552510500885959, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
       propertyPath: m_Name
       value: Fishka Stomach
+      objectReference: {fileID: 0}
+    - target: {fileID: 1211602492197212983, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
+      propertyPath: up
+      value: 1.82
       objectReference: {fileID: 0}
     - target: {fileID: 1784147767285025474, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
       propertyPath: m_Materials.Array.data[2]
@@ -1978,6 +2483,10 @@ PrefabInstance:
     - target: {fileID: 1170552510500885959, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
       propertyPath: m_Name
       value: Fishka Eye
+      objectReference: {fileID: 0}
+    - target: {fileID: 1211602492197212983, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
+      propertyPath: up
+      value: 1.82
       objectReference: {fileID: 0}
     - target: {fileID: 8123077160151141418, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2134,6 +2643,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 81.762
       objectReference: {fileID: 0}
+    - target: {fileID: 5565995610054338626, guid: bd5c963a3d9ad7441a289cbc4d51f2f7, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6098308062618630944, guid: bd5c963a3d9ad7441a289cbc4d51f2f7, type: 3}
       propertyPath: m_LocalPosition.x
       value: -218.31
@@ -2212,8 +2725,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 1941607754984652778, guid: bd5c963a3d9ad7441a289cbc4d51f2f7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 461487903}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1838926785277199670, guid: bd5c963a3d9ad7441a289cbc4d51f2f7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 13859937}
     - targetCorrespondingSourceObject: {fileID: 5565995610054338626, guid: bd5c963a3d9ad7441a289cbc4d51f2f7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1399101390}

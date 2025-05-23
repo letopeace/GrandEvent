@@ -28,6 +28,7 @@ public class Player : MonoBehaviour
 
 	private void Update()
 	{
+		/*
 		if (Input.GetMouseButtonDown(0))
 		{
 			SpinAnimate(true);
@@ -35,7 +36,7 @@ public class Player : MonoBehaviour
 		if (Input.GetMouseButtonDown(1))
 		{
 			SpinAnimate(false);
-		}
+		}*/
 	}
 
 	public void Turn()

@@ -3,15 +3,28 @@ using UnityEngine;
 public class CameraManager : MonoBehaviour
 {
 	public Transform head;
+	public Camera cam;
 
 	public Vector3 startRot;
 	public Vector2 maxRotation = new Vector2(30f, 60f); // Ограничения по X и Y
 
 	public float sensitivity = 0.1f;
 
+
+	public static Vector3 PointOnCamera(string lay = "Default")
+	{
+		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+		if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, LayerMask.GetMask(lay)))
+		{
+			return hit.point;
+		}
+		return Vector3.zero; // Ничего не попали
+	}
+
 	private void Start()
 	{
 		startRot = head.eulerAngles;
+		cam = GetComponent<Camera>();
 	}
 
 	private void LateUpdate()

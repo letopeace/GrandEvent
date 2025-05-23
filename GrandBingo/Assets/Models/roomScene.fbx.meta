@@ -1,0 +1,524 @@
+fileFormatVersion: 2
+guid: 1a0ee13c2f1f7b0428686648ccfb2bda
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Allwalls1
+    second: {fileID: 2100000, guid: ab5c3003813894246a4626dcb862af9f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Eightset1
+    second: {fileID: 2100000, guid: 624fb348d9c2bca4e9153517652e59c0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fifthset2
+    second: {fileID: 2100000, guid: 44694c9eee3330d41ba469af46a198e3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Firstset1
+    second: {fileID: 2100000, guid: 6d68eaefaea21e7429ab004fda292f5c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Floor1
+    second: {fileID: 2100000, guid: 054caf2204261fa428daea1ef2020c8e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fourthset2
+    second: {fileID: 2100000, guid: 9e627e76e237a6147bcc0e81974633f9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass1
+    second: {fileID: 2100000, guid: 4c267e89b6151b7418564e222aaa5e18, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gridmat1
+    second: {fileID: 2100000, guid: 8579eccf2739da84abe920886b613bca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ninethset
+    second: {fileID: 2100000, guid: 0a37409c4bad4d74fa74bf1ee71d8d87, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RedBrickWall
+    second: {fileID: 2100000, guid: 56a12ae949a34c844879f8fffc44e753, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Roof2
+    second: {fileID: 2100000, guid: 40dcf94ed7717b941a6d0f49e9560cfc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Secondset2
+    second: {fileID: 2100000, guid: b83a0e6338f0b5a4faa04999fd36e11f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Seventhset2
+    second: {fileID: 2100000, guid: 32e77ba3d4397a64eabc83f1694974ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sisthset
+    second: {fileID: 2100000, guid: 5d4bedb81239ed6429302a3138beffe5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tenthset
+    second: {fileID: 2100000, guid: 73b4154ac85d5204f8ac8930f9327ad7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Thirdset2
+    second: {fileID: 2100000, guid: b07d1556af9fa0b428fd2dce68898be6, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Allwalls1_Base_Color
+    second: {fileID: 2800000, guid: 0cce215befd391245be5a1a74f30dc5b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Allwalls1_Metallic
+    second: {fileID: 2800000, guid: 541d911ee736f354ab1484fcaad8ab6f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Allwalls1_Normal
+    second: {fileID: 2800000, guid: e30ef9cf872cf4e4fbe1d5a1363e8689, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Allwalls1_Roughness
+    second: {fileID: 2800000, guid: 2dc6b1a78435cdd4990c20ed6ac91599, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Brick_Wall_Destroyed_Base Color
+    second: {fileID: 2800000, guid: 7b6b08a6cde96fb428e50e2ec60c4133, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Brick_Wall_Destroyed_Metallic
+    second: {fileID: 2800000, guid: 4c70d2d92adbc2e4ebb635490d86b18a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Brick_Wall_Destroyed_Normal
+    second: {fileID: 2800000, guid: 32c36757a6d17024fa50c821151a8e1a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Brick_Wall_Destroyed_Roughness
+    second: {fileID: 2800000, guid: b3853713f8b34054eadacf7a0322cc30, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Eightset1_Base_Color
+    second: {fileID: 2800000, guid: 8c427de95fd386e43bb22852c8814f9d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Eightset1_Metallic
+    second: {fileID: 2800000, guid: 7c7aa8934233af54b928dd5e6e5a5abd, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Eightset1_Normal
+    second: {fileID: 2800000, guid: f1203ed2e3b0dce42a512ef9404b0a1f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Eightset1_Roughness
+    second: {fileID: 2800000, guid: 9183a2a4c0c091d40b10e8a39970903b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Fifthset2_Base_Color
+    second: {fileID: 2800000, guid: ade21f82de7ab1447a705cf77209a4ea, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Fifthset2_Metallic
+    second: {fileID: 2800000, guid: ff150d82d4fad574b9643dc85e9f0e97, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Fifthset2_Normal
+    second: {fileID: 2800000, guid: 32a5048fc155fd140aebec2d6d7d5a5a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Fifthset2_Roughness
+    second: {fileID: 2800000, guid: 83d4f59b813fc164596c78e50c17ad6f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Firstset1_Base_Color
+    second: {fileID: 2800000, guid: 0499dfd31d6b91542a16dfff5a732f79, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Firstset1_Metallic
+    second: {fileID: 2800000, guid: 0c6a09df951450b4e98f9b6f94810cfb, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Firstset1_Normal
+    second: {fileID: 2800000, guid: 6fe4cc9725718d042bf17327f8c4a018, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Firstset1_Roughness
+    second: {fileID: 2800000, guid: 4ea076d5ae5dc454abacf138f8aaa6a8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Floor1_Base_Color
+    second: {fileID: 2800000, guid: ceac50240eff4c940b01bb47fdfae714, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Floor1_Metallic
+    second: {fileID: 2800000, guid: 388878b33ee157f4b8ec4ff4e26b5c48, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Floor1_Normal
+    second: {fileID: 2800000, guid: 99bd20663ceef2f43b6759a2cb0df87f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Floor1_Roughness
+    second: {fileID: 2800000, guid: 8d3a2687a6cacdc41b70376624c512a7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Fourthset2_Base_Color
+    second: {fileID: 2800000, guid: d0ca0c7c2ecdd4640b3af24a1fcc69b6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Fourthset2_Metallic
+    second: {fileID: 2800000, guid: 7c9ce4270160c6941b538946befa014e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Fourthset2_Normal
+    second: {fileID: 2800000, guid: 335e805b74310dc47b4d14030dc09779, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Fourthset2_Roughness
+    second: {fileID: 2800000, guid: 0ee79687a9dde984db1125004b9a16c8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Glass1_Base_Color
+    second: {fileID: 2800000, guid: ee96a0910ea47794a8be578ac5c6ba93, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Glass1_Emissive
+    second: {fileID: 2800000, guid: 17e5abf00db5c254693c967d092f9cc2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Glass1_Metallic
+    second: {fileID: 2800000, guid: 55987cafccf70d24aa11ecb96ba59060, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Glass1_Normal
+    second: {fileID: 2800000, guid: f15e2582bd4ddf7449020c03dfeca4d0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Glass1_Opacity
+    second: {fileID: 2800000, guid: 070ce5ed5ae9c18469713ef2f7a8b475, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Glass1_Roughness
+    second: {fileID: 2800000, guid: eb3e64b36aa3a6046a41fdd443367491, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Gridmat1_Base_Color
+    second: {fileID: 2800000, guid: c9e4cd448b919604386fc47b026f343d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Gridmat1_Metallic
+    second: {fileID: 2800000, guid: 04fe6d81e2b2cc74ba7f8f13c722f75c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Gridmat1_Normal
+    second: {fileID: 2800000, guid: 5eec3eacdd13df84ba71db25ee520fb4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Gridmat1_Opacity
+    second: {fileID: 2800000, guid: ae986910c9bc7854682cae9a67fdde45, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Gridmat1_Roughness
+    second: {fileID: 2800000, guid: 715973bd7c741a14cbd153b45fa94ae0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Ninethset_Base_Color
+    second: {fileID: 2800000, guid: dedbe86672cd7fb4399eb86edec23435, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Ninethset_Metallic
+    second: {fileID: 2800000, guid: c38eb14b13e579946aef1d2583d5ef91, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Ninethset_Normal
+    second: {fileID: 2800000, guid: 95e0d4802bdc1864f89da5b4ea9d87fd, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Ninethset_Roughness
+    second: {fileID: 2800000, guid: df0fb205d46de1941843503793db44a0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Roof2_Base_Color
+    second: {fileID: 2800000, guid: 66fa32eb015559749b953ef0e499e4c1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Roof2_Metallic
+    second: {fileID: 2800000, guid: d4d7a73266899424a83f032b03d94ba0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Roof2_Normal
+    second: {fileID: 2800000, guid: 150c6bbf12f18b14faa7bae872e6da8c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Roof2_Roughness
+    second: {fileID: 2800000, guid: 497077aebae7cc341b9736d1b1fe72f9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Secondset2_Base_Color
+    second: {fileID: 2800000, guid: a2f1b0847e125e2428a1fa9f3e00a047, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Secondset2_Metallic
+    second: {fileID: 2800000, guid: 4ca01a4d317215745a16305443f5efca, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Secondset2_Normal
+    second: {fileID: 2800000, guid: 38f8d55a261f9134db7bb87b910bee5e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Secondset2_Roughness
+    second: {fileID: 2800000, guid: 227cffb36d20ea84e9ed5f5096bfd0e2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Seventhset2_Base_Color
+    second: {fileID: 2800000, guid: 0cb22308a6ee1db4fb5820f1eae819c1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Seventhset2_Metallic
+    second: {fileID: 2800000, guid: 03f0a18fb4dfbba4fa981541af1a5ec7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Seventhset2_Normal
+    second: {fileID: 2800000, guid: e938eb5adb9e0964393f4ddfb9403fe5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Seventhset2_Roughness
+    second: {fileID: 2800000, guid: 96ca4be2b62fca24f91a9f62d5716f7c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Sisthset_Base_Color
+    second: {fileID: 2800000, guid: 9bdd81a493a1e4c489b4db64af743475, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Sisthset_Metallic
+    second: {fileID: 2800000, guid: 877b4dc92a23b694d8c3bdd9a57ed8ae, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Sisthset_Normal
+    second: {fileID: 2800000, guid: c8bc41851d858a547827a33e775983dd, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Sisthset_Roughness
+    second: {fileID: 2800000, guid: 55d7eb482743293439f4f357cf34687a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tenthset_Base_Color
+    second: {fileID: 2800000, guid: 1d602f4a60394f94190fad14595a38ec, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tenthset_Metallic
+    second: {fileID: 2800000, guid: ef05313f2a138ab44a699707b6da5290, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tenthset_Normal
+    second: {fileID: 2800000, guid: cb2c5ba801413b443879fb4358bfaec4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tenthset_Roughness
+    second: {fileID: 2800000, guid: e2061a28f6937294faa17c8e1e37a218, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Thirdset2_Base_Color
+    second: {fileID: 2800000, guid: 6850629a9e0fb8c44b265e614c2ba01e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Thirdset2_Metallic
+    second: {fileID: 2800000, guid: 7ca9e71a3d0ebf14f9b8a4c3f455568f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Thirdset2_Normal
+    second: {fileID: 2800000, guid: 6ebd19dfead07424f85fbe9d01ae1eea, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Thirdset2_Roughness
+    second: {fileID: 2800000, guid: a9331cd910d9dcc45aaa43917b26411a, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,57 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Boostrap : MonoBehaviour
+{
+    public Player player;
+    public Player opponent;
+
+    
+    public bool turn = true;
+    public bool bid = true;
+    public bool fraud = false;
+    public bool shoot = false;
+
+
+    private void Update()
+    {
+        if (bid)
+        {
+			if (turn)
+			{
+				player.Bid();
+			}
+			else
+			{
+				opponent.Bid();
+			}
+		}
+		else if (fraud)
+		{
+			if (turn)
+			{
+				player.Fraud();
+			}
+			else
+			{
+				opponent.Fraud();
+			}
+		}
+		else if (shoot)
+		{
+			if (turn)
+			{
+				player.Turn();
+			}
+			else
+			{
+				opponent.Turn();
+			}
+		}
+
+
+
+
+	}
+}

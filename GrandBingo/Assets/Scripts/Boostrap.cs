@@ -7,6 +7,8 @@ public class Boostrap : MonoBehaviour
     public Player player;
     public Player opponent;
 
+	public int round;
+
     
     public bool turn = true;
     public bool bid = false;
@@ -21,6 +23,8 @@ public class Boostrap : MonoBehaviour
 
 	private void Update()
     {
+
+
         if (bid)
         {
 			if (turn)

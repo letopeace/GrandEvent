@@ -4,15 +4,7 @@ using UnityEngine;
 
 public class RevolverAnim : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Animator animator;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }

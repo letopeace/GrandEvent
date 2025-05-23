@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+	public Boostrap boostrap;
 	public Animator animator;
 
 	public Chip handChip;
@@ -14,6 +15,8 @@ public class Player : MonoBehaviour
 	public Chip kidneyChip;
 	public Chip liverChip;
 
+	public Transform revolver;
+
 
 	public int handCount = 2;
     public int eyeCount = 2;
@@ -21,8 +24,21 @@ public class Player : MonoBehaviour
 
     public int stomach = 1, lungs = 1, kidney = 1, liver = 1;
 
+	private bool temperaryTurn = true;
 
-    public void Turn()
+	private void Update()
+	{
+		if (Input.GetMouseButtonDown(0))
+		{
+			SpinAnimate(true);
+		}
+		if (Input.GetMouseButtonDown(1))
+		{
+			SpinAnimate(false);
+		}
+	}
+
+	public void Turn()
     {
 
     }
@@ -42,7 +58,16 @@ public class Player : MonoBehaviour
 
 	}
 
+	public void SpinAnimate(bool turn)
+	{
+		animator.SetTrigger("Spin");
+		temperaryTurn = turn;
+	}
 
+	public void SpinAnimate2()
+	{
+		StartCoroutine(SpinRevolver(temperaryTurn));
+	}
 
 
 	public void TakeDamage(string chip)
@@ -144,5 +169,34 @@ public class Player : MonoBehaviour
 	private void LiverDestroy()
 	{
 		liver = 0;
+	}
+
+
+	private IEnumerator SpinRevolver(bool turn)
+	{
+		float duration = 2.5f; // сколько секунд длится вращение
+		float totalRotations = -5f; // сколько оборотов (1 оборот = 360 градусов)
+		float startAngle = revolver.eulerAngles.y;
+
+		float targetOffset = turn ? -1350 : -1170f;
+		float endAngle = startAngle + /*totalRotations * 360f +*/ targetOffset;
+
+		float elapsed = 0f;
+
+		while (elapsed < duration)
+		{
+			elapsed += Time.deltaTime;
+			float t = elapsed / duration;
+
+			// ease-out: быстро сначала, медленно к концу
+			float smoothT = 1 - Mathf.Pow(1 - t, 3);
+
+			float currentAngle = Mathf.Lerp(startAngle, endAngle, smoothT);
+			revolver.eulerAngles = new Vector3(0, currentAngle, 0);
+
+			yield return null;
+		}
+
+		revolver.eulerAngles = new Vector3(0, endAngle, 0); // точная установка финального угла
 	}
 }

@@ -14,7 +14,7 @@ public class CameraManager : MonoBehaviour
 		startRot = head.eulerAngles;
 	}
 
-	private void Update()
+	private void LateUpdate()
 	{
 		// Получаем смещение курсора от центра экрана
 		Vector2 mouseOffset = new Vector2(

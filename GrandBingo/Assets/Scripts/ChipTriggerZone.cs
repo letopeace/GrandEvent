@@ -69,10 +69,10 @@ public class ChipTriggerZone : MonoBehaviour
 
 	private void ShowButton()
 	{
-		buutonNext.SetActive(true);
+		buutonNext?.SetActive(true);
 	}
 	
-	private void HideButton()
+	public void HideButton()
 	{
 		buutonNext?.SetActive(false);
 	}

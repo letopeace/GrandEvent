@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.XR;
 
@@ -28,7 +29,7 @@ public class Player : MonoBehaviour
     public int stomach = 1, lungs = 1, kidney = 1, liver = 1;
 
 	private bool temperaryTurn = true;
-	private System.Random random = new System.Random();
+	public System.Random random = new System.Random();
 
 
 	private void Update()
@@ -118,6 +119,11 @@ public class Player : MonoBehaviour
 		List<ChipType> result = new();
 		List<ChipType> temporaryChips = new(available_chips); // Копируем доступные фишки
 
+		if (count < temporaryChips.Count)
+		{
+			temporaryChips.Remove(ChipType.head);
+		}
+
 		for (int i = 0; i < count; i++)
 		{
 			if (temporaryChips.Count == 0) break; // На случай если фишек не хватает
@@ -133,6 +139,15 @@ public class Player : MonoBehaviour
 
 	public void Betting(List<ChipType> chips)
 	{
+		animator.SetTrigger("Bet");
+
+		StartCoroutine(ChipsBetAwait(0.6f, chips));
+	}
+
+	private IEnumerator ChipsBetAwait(float duration, List<ChipType> chips)
+	{
+		yield return new WaitForSeconds(duration);
+
 		foreach (ChipType chip in chips)
 		{
 			switch (chip)
@@ -161,7 +176,7 @@ public class Player : MonoBehaviour
 					liverChip.Betting();
 					break;
 
-				case ChipType.lungs:	
+				case ChipType.lungs:
 					lungsChip.Betting();
 					break;
 
@@ -170,7 +185,6 @@ public class Player : MonoBehaviour
 					break;
 
 			}
-
 		}
 	}
 

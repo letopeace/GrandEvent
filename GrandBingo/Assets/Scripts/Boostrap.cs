@@ -23,10 +23,6 @@ public class Boostrap : MonoBehaviour
 
 	private void Update()
     {
-		if (Input.GetMouseButtonDown(0))
-		{
-			Betted();
-		}
 
 
         if (bid)
@@ -70,6 +66,13 @@ public class Boostrap : MonoBehaviour
 		List<ChipType> opponentBets = opponent.BetChips(round > 6 ? 6 : round);
 
 		opponent.Betting(opponentBets);
+		bool whoseTurn = opponent.random.Next(0,2) == 0 ? false : true;
+		turn = whoseTurn;
+		opponent.SpinAnimate(whoseTurn);
+
+		bid = false;
+
+		fraud = true;
 	}
 
 }

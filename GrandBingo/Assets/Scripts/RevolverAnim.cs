@@ -7,6 +7,22 @@ public class RevolverAnim : MonoBehaviour
     public Animator animator;
     public Transform parentOffset;
 	public ParticleSystem shootingEffect;
+	public GameObject canvas;
+
+	public GameObject bullet_1;
+	public GameObject bullet_2;
+	public GameObject bullet_3;
+	public GameObject bullet_4;
+	public GameObject bullet_5;
+	public GameObject bullet_6;
+
+	public GameObject circle_1;
+	public GameObject circle_2;
+	public GameObject circle_3;
+	public GameObject circle_4;
+	public GameObject circle_5;
+	public GameObject circle_6;
+
 
 	private void Start()
 	{
@@ -42,5 +58,61 @@ public class RevolverAnim : MonoBehaviour
 	public void ShootingEffect()
 	{
 		shootingEffect.Play();
+	}
+
+	public void Clear()
+	{
+		bullet_1.SetActive(false);
+		bullet_2.SetActive(false);
+		bullet_3.SetActive(false);
+		bullet_4.SetActive(false);
+		bullet_5.SetActive(false);
+		bullet_6.SetActive(false);
+	}
+
+	public void ShowTip()
+	{
+		canvas?.SetActive(true);
+	}
+
+	public void HideTip()
+	{
+		canvas?.SetActive(false);
+	}
+
+	public void Bullet_1()
+	{
+		bullet_1.SetActive(true);
+		animator.SetTrigger("1");
+	}
+
+	public void Bullet_2()
+	{
+		bullet_2.SetActive(true);
+		animator.SetTrigger("2");
+	}
+
+	public void Bullet_3()
+	{
+		bullet_3.SetActive(true);
+		animator.SetTrigger("3");
+	}
+
+	public void Bullet_4()
+	{
+		bullet_4.SetActive(true);
+		animator.SetTrigger("4");
+	}
+
+	public void Bullet_5()
+	{
+		bullet_5.SetActive(true);
+		animator.SetTrigger("5");
+	}
+
+	public void Bullet_6()
+	{
+		bullet_6.SetActive(true);
+		animator.SetTrigger("6");
 	}
 }

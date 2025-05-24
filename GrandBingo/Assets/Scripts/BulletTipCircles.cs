@@ -1,0 +1,23 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class BulletTipCircles : MonoBehaviour
+{
+	private GameObject circle;
+
+	private void Start()
+	{
+		circle = transform.GetChild(0).gameObject;
+	}
+
+	private void OnMouseEnter()
+	{
+		circle.SetActive(true);
+	}
+
+	private void OnMouseExit()
+	{
+		circle.SetActive(false);
+	}
+}

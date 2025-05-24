@@ -147,12 +147,13 @@ MonoBehaviour:
   player: {fileID: 1049086284}
   opponent: {fileID: 685779125}
   round: 1
+  remainBullet: 0
   turn: 1
   bid: 0
   fraud: 0
   shoot: 0
-  bottomYourSelf: {fileID: 0}
-  bottomOpponent: {fileID: 0}
+  bottomYourSelf: {fileID: 1264608124}
+  bottomOpponent: {fileID: 303467721}
 --- !u!4 &22811760 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8123077160151141418, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
@@ -4025,6 +4026,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 146079749980749016, guid: 5c1220e625a889e42a0ba7bab6bfe5dc, type: 3}
+      propertyPath: boostrap
+      value: 
+      objectReference: {fileID: 13859937}
+    - target: {fileID: 146079749980749016, guid: 5c1220e625a889e42a0ba7bab6bfe5dc, type: 3}
       propertyPath: revolver
       value: 
       objectReference: {fileID: 2047963558}
@@ -4033,6 +4038,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 885449681750785668, guid: 5c1220e625a889e42a0ba7bab6bfe5dc, type: 3}
+      propertyPath: boostrap
+      value: 
+      objectReference: {fileID: 13859937}
+    - target: {fileID: 885449681750785668, guid: 5c1220e625a889e42a0ba7bab6bfe5dc, type: 3}
       propertyPath: revolver
       value: 
       objectReference: {fileID: 2047963558}
@@ -4040,6 +4049,10 @@ PrefabInstance:
       propertyPath: ind
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 1671006062037127505, guid: 5c1220e625a889e42a0ba7bab6bfe5dc, type: 3}
+      propertyPath: boostrap
+      value: 
+      objectReference: {fileID: 13859937}
     - target: {fileID: 1671006062037127505, guid: 5c1220e625a889e42a0ba7bab6bfe5dc, type: 3}
       propertyPath: revolver
       value: 
@@ -4101,6 +4114,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3728327449516181660, guid: 5c1220e625a889e42a0ba7bab6bfe5dc, type: 3}
+      propertyPath: boostrap
+      value: 
+      objectReference: {fileID: 13859937}
+    - target: {fileID: 3728327449516181660, guid: 5c1220e625a889e42a0ba7bab6bfe5dc, type: 3}
       propertyPath: revolver
       value: 
       objectReference: {fileID: 2047963558}
@@ -4109,6 +4126,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4631607042106241680, guid: 5c1220e625a889e42a0ba7bab6bfe5dc, type: 3}
+      propertyPath: boostrap
+      value: 
+      objectReference: {fileID: 13859937}
+    - target: {fileID: 4631607042106241680, guid: 5c1220e625a889e42a0ba7bab6bfe5dc, type: 3}
       propertyPath: revolver
       value: 
       objectReference: {fileID: 2047963558}
@@ -4116,6 +4137,10 @@ PrefabInstance:
       propertyPath: ind
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4682277145389073660, guid: 5c1220e625a889e42a0ba7bab6bfe5dc, type: 3}
+      propertyPath: boostrap
+      value: 
+      objectReference: {fileID: 13859937}
     - target: {fileID: 4682277145389073660, guid: 5c1220e625a889e42a0ba7bab6bfe5dc, type: 3}
       propertyPath: revolver
       value: 

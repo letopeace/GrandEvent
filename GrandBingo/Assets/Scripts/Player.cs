@@ -297,6 +297,8 @@ public class Player : MonoBehaviour
 			revolver.rotation = hand.rotation;
 			yield return null;
 		}
+		revolver.localPosition = new Vector3(0.174f, 0f, -0.187f);
+		revolver.eulerAngles = Vector3.zero;
 	}
 
 	public void HoldRevolver()

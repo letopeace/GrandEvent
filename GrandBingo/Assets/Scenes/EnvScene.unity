@@ -146,7 +146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1049086284}
   opponent: {fileID: 685779125}
-  round: 3
+  round: 1
   turn: 1
   bid: 0
   fraud: 0
@@ -173,12 +173,16 @@ PrefabInstance:
       value: 1.82
       objectReference: {fileID: 0}
     - target: {fileID: 1211602492197212983, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
+      propertyPath: players
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1211602492197212983, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
       propertyPath: target.x
       value: -2.3270063
       objectReference: {fileID: 0}
     - target: {fileID: 1211602492197212983, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
       propertyPath: target.y
-      value: 1.8
+      value: 1.82
       objectReference: {fileID: 0}
     - target: {fileID: 1211602492197212983, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
       propertyPath: target.z
@@ -266,12 +270,16 @@ PrefabInstance:
       value: 1.82
       objectReference: {fileID: 0}
     - target: {fileID: 1211602492197212983, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
+      propertyPath: players
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1211602492197212983, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
       propertyPath: target.x
       value: -2.3270063
       objectReference: {fileID: 0}
     - target: {fileID: 1211602492197212983, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
       propertyPath: target.y
-      value: 1.8
+      value: 1.82
       objectReference: {fileID: 0}
     - target: {fileID: 1211602492197212983, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
       propertyPath: target.z
@@ -673,12 +681,16 @@ PrefabInstance:
       value: 1.82
       objectReference: {fileID: 0}
     - target: {fileID: 1211602492197212983, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
+      propertyPath: players
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1211602492197212983, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
       propertyPath: target.x
       value: -2.3270063
       objectReference: {fileID: 0}
     - target: {fileID: 1211602492197212983, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
       propertyPath: target.y
-      value: 1.8
+      value: 1.82
       objectReference: {fileID: 0}
     - target: {fileID: 1211602492197212983, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
       propertyPath: target.z
@@ -955,12 +967,16 @@ PrefabInstance:
       value: 1.82
       objectReference: {fileID: 0}
     - target: {fileID: 1211602492197212983, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
+      propertyPath: players
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1211602492197212983, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
       propertyPath: target.x
       value: -2.3270063
       objectReference: {fileID: 0}
     - target: {fileID: 1211602492197212983, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
       propertyPath: target.y
-      value: 1.8
+      value: 1.82
       objectReference: {fileID: 0}
     - target: {fileID: 1211602492197212983, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
       propertyPath: target.z
@@ -1053,12 +1069,16 @@ PrefabInstance:
       value: 1.82
       objectReference: {fileID: 0}
     - target: {fileID: 1211602492197212983, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
+      propertyPath: players
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1211602492197212983, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
       propertyPath: target.x
       value: -2.3270063
       objectReference: {fileID: 0}
     - target: {fileID: 1211602492197212983, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
       propertyPath: target.y
-      value: 1.8
+      value: 1.82
       objectReference: {fileID: 0}
     - target: {fileID: 1211602492197212983, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
       propertyPath: target.z
@@ -1872,6 +1892,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[2]
       value: 
       objectReference: {fileID: 2100000, guid: 2f02818d29dcc6747a581258b65fd55f, type: 2}
+    - target: {fileID: 6166387491971457591, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7353379874257181969, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
       propertyPath: m_Materials.Array.data[2]
       value: 
@@ -2541,12 +2565,16 @@ PrefabInstance:
       value: 1.82
       objectReference: {fileID: 0}
     - target: {fileID: 1211602492197212983, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
+      propertyPath: players
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1211602492197212983, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
       propertyPath: target.x
       value: -2.3270063
       objectReference: {fileID: 0}
     - target: {fileID: 1211602492197212983, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
       propertyPath: target.y
-      value: 1.8
+      value: 1.82
       objectReference: {fileID: 0}
     - target: {fileID: 1211602492197212983, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
       propertyPath: target.z
@@ -2730,12 +2758,16 @@ PrefabInstance:
       value: 1.82
       objectReference: {fileID: 0}
     - target: {fileID: 1211602492197212983, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
+      propertyPath: players
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1211602492197212983, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
       propertyPath: target.x
       value: -2.3270063
       objectReference: {fileID: 0}
     - target: {fileID: 1211602492197212983, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
       propertyPath: target.y
-      value: 1.8
+      value: 1.82
       objectReference: {fileID: 0}
     - target: {fileID: 1211602492197212983, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
       propertyPath: target.z
@@ -2823,12 +2855,16 @@ PrefabInstance:
       value: 1.82
       objectReference: {fileID: 0}
     - target: {fileID: 1211602492197212983, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
+      propertyPath: players
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1211602492197212983, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
       propertyPath: target.x
       value: -2.3270063
       objectReference: {fileID: 0}
     - target: {fileID: 1211602492197212983, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
       propertyPath: target.y
-      value: 1.8
+      value: 1.82
       objectReference: {fileID: 0}
     - target: {fileID: 1211602492197212983, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
       propertyPath: target.z

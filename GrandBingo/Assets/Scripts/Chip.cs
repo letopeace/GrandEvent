@@ -17,7 +17,6 @@ public class Chip : MonoBehaviour
 	public void Betting()
 	{
 		StartCoroutine(Reach(target));
-		StartCoroutine(Up());
 	}
 
 

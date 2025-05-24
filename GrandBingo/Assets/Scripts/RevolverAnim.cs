@@ -29,6 +29,7 @@ public class RevolverAnim : MonoBehaviour
 	{
 		animator = GetComponent<Animator>();
 		parentOffset = transform.parent;
+		Clear();
 	}
 
 	public void RotationReset()

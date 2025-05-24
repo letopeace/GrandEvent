@@ -55,6 +55,7 @@ public class Player : MonoBehaviour
 	public void Take()
 	{
 		animator.SetTrigger("Take");
+		animator.SetTrigger("Open");
 	}
 
 	public void Bid()

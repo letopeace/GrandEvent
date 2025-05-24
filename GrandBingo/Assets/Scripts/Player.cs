@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
 	public Chip liverChip;
 	public Chip headChip;
 
-	public Transform revolver;
+	public Transform revolver, hand;
 	public List<ChipType> available_chips = new List<ChipType>{ ChipType.hand, ChipType.eye, ChipType.leg, ChipType.stomach, ChipType.lungs, ChipType.kidney, ChipType.liver, ChipType.head};
 
 	public int handCount = 2;
@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
     public int legCount = 4;
 
     public int stomach = 1, lungs = 1, kidney = 1, liver = 1;
+	public bool isHoldingRevolver = false;
 
 	private bool temperaryTurn = true;
 	public System.Random random = new System.Random();
@@ -284,6 +285,28 @@ public class Player : MonoBehaviour
 		}
 
 		revolver.eulerAngles = new Vector3(0, endAngle, 0); // точная установка финального угла
+	}
+
+	private IEnumerator ConstrainRevolver()
+	{ 
+		isHoldingRevolver = true;
+
+		while (isHoldingRevolver)
+		{
+			revolver.position = hand.position;
+			revolver.rotation = hand.rotation;
+			yield return null;
+		}
+	}
+
+	public void HoldRevolver()
+	{
+		StartCoroutine(ConstrainRevolver());
+	}
+
+	public void DestroyConstrain()
+	{
+		isHoldingRevolver = false;
 	}
 }
 

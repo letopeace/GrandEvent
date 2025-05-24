@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class Boostrap : MonoBehaviour
@@ -59,6 +60,15 @@ public class Boostrap : MonoBehaviour
 			}
 		}
 
+	}
+
+	public void TakeRevolver()
+	{
+		if (turn)
+		{
+			player.Take();
+		}
+		else opponent.Take();
 	}
 
 	public void Betted()

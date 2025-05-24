@@ -52,6 +52,10 @@ public class Player : MonoBehaviour
     {
 
     }
+	public void Take()
+	{
+		animator.SetTrigger("Take");
+	}
 
 	public void Bid()
 	{
@@ -64,6 +68,11 @@ public class Player : MonoBehaviour
 	}
 
 	public void Shoot()
+	{
+
+	}
+
+	public void RevolverHasTaken()
 	{
 
 	}
@@ -306,6 +315,8 @@ public class Player : MonoBehaviour
 		}
 
 		revolver.eulerAngles = new Vector3(0, endAngle, 0); // точная установка финального угла
+		yield return new WaitForSeconds(0.5f);
+		boostrap.TakeRevolver();
 	}
 
 	private IEnumerator ConstrainRevolver()

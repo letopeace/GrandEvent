@@ -9,7 +9,8 @@ public class Boostrap : MonoBehaviour
     public Player opponent;
 
 	public int round = 1;
-	public int remainBullet;
+	public int remainBullet { get { return remainBullet; } set { UpdateSpinButton(); _remainBullet = value; } }
+	private int _remainBullet;
 
     
     public bool turn = true;
@@ -19,6 +20,7 @@ public class Boostrap : MonoBehaviour
 
 	[SerializeField] private GameObject bottomYourSelf;
 	[SerializeField] private GameObject bottomOpponent;
+	[SerializeField] private GameObject spinButton;
 
 	private void Start()
 	{
@@ -70,6 +72,19 @@ public class Boostrap : MonoBehaviour
 
 	}
 
+	public void UpdateSpinButton()
+	{
+		if (_remainBullet == 0)
+		{
+			spinButton?.SetActive(true);
+		}
+		else
+		{
+			spinButton?.SetActive(false);	
+		}
+
+	}
+
 	public void TakeRevolver()
 	{
 		if (turn)
@@ -91,6 +106,14 @@ public class Boostrap : MonoBehaviour
 		bid = false;
 
 		fraud = true;
+	}
+
+	public void Spinner()
+	{
+		if (turn)
+		{
+			player.SpinAnimate
+		}
 	}
 
 	public void ActivateShootingBottom()

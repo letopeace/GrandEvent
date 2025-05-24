@@ -112,7 +112,7 @@ public class Boostrap : MonoBehaviour
 	{
 		if (turn)
 		{
-			player.SpinAnimate
+			player.SpinAnimate(turn);
 		}
 	}
 

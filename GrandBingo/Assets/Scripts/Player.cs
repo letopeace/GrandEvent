@@ -70,8 +70,9 @@ public class Player : MonoBehaviour
 
 	public void Shoot()
 	{
-
-	}
+		bool isShoot = revolverAnim.revolver.Shoot();
+        
+    }
 
 	public void RevolverHasTaken()
 	{
@@ -101,12 +102,12 @@ public class Player : MonoBehaviour
 
 	public void ShootOpponent()
 	{
-
+		animator.SetTrigger("ShootOpponet");
 	}
 
 	public void ShootYourSelf()
 	{
-
+		animator.SetTrigger("ShootYourSelf");
 	}
 
 	public void TakeDamage(string chip)

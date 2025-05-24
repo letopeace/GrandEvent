@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
 {
 	public Boostrap boostrap;
 	public Animator animator;
+	public CameraManager cameraM;
 
 	public Chip handChip;
 	public Chip eyeChip;
@@ -20,6 +21,7 @@ public class Player : MonoBehaviour
 	public Chip headChip;
 
 	public Transform revolver, hand;
+	public RevolverAnim revolverAnim;
 	public List<ChipType> available_chips = new List<ChipType>{ ChipType.hand, ChipType.eye, ChipType.leg, ChipType.stomach, ChipType.lungs, ChipType.kidney, ChipType.liver, ChipType.head};
 
 	public int handCount = 2;
@@ -75,6 +77,16 @@ public class Player : MonoBehaviour
 	public void SpinAnimate2()
 	{
 		StartCoroutine(SpinRevolver(temperaryTurn));
+	}
+
+	public void CameraFreeze()
+	{
+		cameraM.freeze = true;
+	}
+
+	public void CameraUnfreeze()
+	{
+		cameraM.freeze = false;
 	}
 
 
@@ -143,6 +155,15 @@ public class Player : MonoBehaviour
 		animator.SetTrigger("Bet");
 
 		StartCoroutine(ChipsBetAwait(0.6f, chips));
+	}
+
+	public void OpenDrums()
+	{
+		revolverAnim.OpenDrum();
+	}
+	public void CloseDrums()
+	{
+		revolverAnim.CloseDrum();
 	}
 
 	private IEnumerator ChipsBetAwait(float duration, List<ChipType> chips)

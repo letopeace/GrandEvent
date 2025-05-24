@@ -10,6 +10,10 @@ public class CameraManager : MonoBehaviour
 
 	public float sensitivity = 0.1f;
 
+	public bool freeze = false;
+	private Vector3 camStartPos;
+	private Quaternion camStartRot;
+
 
 	public static Vector3 PointOnCamera(string lay = "Default")
 	{
@@ -25,26 +29,39 @@ public class CameraManager : MonoBehaviour
 	{
 		startRot = head.eulerAngles;
 		cam = GetComponent<Camera>();
+		camStartPos = transform.localPosition;
+		camStartRot = transform.localRotation;
 	}
 
 	private void LateUpdate()
 	{
-		// Получаем смещение курсора от центра экрана
-		Vector2 mouseOffset = new Vector2(
-			Input.mousePosition.x - Screen.width / 2,
-			Input.mousePosition.y - Screen.height / 2
-		);
+		if (!freeze)
+		{
+			transform.localPosition = camStartPos;
+			transform.localRotation = camStartRot;
 
-		// Преобразуем смещение в желаемый угол поворота
-		float targetY = startRot.y + mouseOffset.x * sensitivity; // вправо-влево
-		float targetX = startRot.x - mouseOffset.y * sensitivity; // вверх-вниз (инверсия)
+			// Получаем смещение курсора от центра экрана
+			Vector2 mouseOffset = new Vector2(
+				Input.mousePosition.x - Screen.width / 2,
+				Input.mousePosition.y - Screen.height / 2
+			);
 
-		// Ограничиваем повороты головы
-		targetY = ClampAngle(targetY, startRot.y - maxRotation.y, startRot.y + maxRotation.y);
-		targetX = ClampAngle(targetX, startRot.x - maxRotation.x, startRot.x + maxRotation.x);
+			// Преобразуем смещение в желаемый угол поворота
+			float targetY = startRot.y + mouseOffset.x * sensitivity; // вправо-влево
+			float targetX = startRot.x - mouseOffset.y * sensitivity; // вверх-вниз (инверсия)
 
-		// Применяем поворот
-		head.eulerAngles = new Vector3(targetX, targetY, startRot.z);
+			// Ограничиваем повороты головы
+			targetY = ClampAngle(targetY, startRot.y - maxRotation.y, startRot.y + maxRotation.y);
+			targetX = ClampAngle(targetX, startRot.x - maxRotation.x, startRot.x + maxRotation.x);
+
+			// Применяем поворот
+			head.eulerAngles = new Vector3(targetX, targetY, startRot.z);
+		}
+		else
+		{
+			transform.position = Vector3.Lerp(transform.position, new Vector3(-2.8642730712890627f, 2f, -1.1278095245361329f), 0.2f);
+			transform.rotation = Quaternion.Lerp(transform.rotation, new Quaternion(0.11790508031845093f, 0.08097749948501587f, -0.07370085269212723f, 0.9869699478149414f), 0.2f);
+		}
 	}
 
 	private float ClampAngle(float angle, float min, float max)

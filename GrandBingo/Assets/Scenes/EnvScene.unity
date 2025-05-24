@@ -537,13 +537,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 175542227}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.000000014901158, y: -0.12823482, z: 0.024356278, w: 0.9914447}
+  m_LocalRotation: {x: 0.04332662, y: -0.12704794, z: 0.029936945, w: 0.9904976}
   m_LocalPosition: {x: -0.00042380602, y: 0.0015395862, z: 0.0011851838}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 580256654}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 5.361, y: -14.488, z: 2.78}
 --- !u!114 &175542231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -561,6 +561,7 @@ MonoBehaviour:
   startRot: {x: 0, y: 0, z: 0}
   maxRotation: {x: 30, y: 60}
   sensitivity: 0.05
+  freeze: 0
 --- !u!114 &175542232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1706,6 +1707,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boostrap: {fileID: 13859937}
   animator: {fileID: 685779123}
+  cameraM: {fileID: 175542231}
   handChip: {fileID: 1938771971}
   eyeChip: {fileID: 1518555512}
   legChip: {fileID: 2076084111}
@@ -1716,6 +1718,7 @@ MonoBehaviour:
   headChip: {fileID: 1783183675}
   revolver: {fileID: 798835532}
   hand: {fileID: 0}
+  revolverAnim: {fileID: 0}
   available_chips: 0000000001000000020000000300000004000000050000000600000007000000
   handCount: 2
   eyeCount: 2
@@ -2218,6 +2221,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boostrap: {fileID: 13859937}
   animator: {fileID: 1049086282}
+  cameraM: {fileID: 175542231}
   handChip: {fileID: 0}
   eyeChip: {fileID: 0}
   legChip: {fileID: 0}
@@ -2228,6 +2232,7 @@ MonoBehaviour:
   headChip: {fileID: 0}
   revolver: {fileID: 673175513}
   hand: {fileID: 1706654899}
+  revolverAnim: {fileID: 2047963558}
   available_chips: 0000000001000000020000000300000004000000050000000600000007000000
   handCount: 2
   eyeCount: 2
@@ -4067,6 +4072,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
+--- !u!114 &2047963558 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 679041881278667761, guid: 5c1220e625a889e42a0ba7bab6bfe5dc, type: 3}
+  m_PrefabInstance: {fileID: 1679384143}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3817b8bc434832478362a5fce4c1b95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2076084108 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8123077160151141418, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}

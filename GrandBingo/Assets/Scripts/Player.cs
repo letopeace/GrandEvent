@@ -76,7 +76,6 @@ public class Player : MonoBehaviour
 	public void RevolverHasTaken()
 	{
 		isHoldingRevolver = true;
-		boostrap.ActivateShootingBottom();
 	}
 
 	public void SpinAnimate(bool turn)
@@ -184,7 +183,8 @@ public class Player : MonoBehaviour
 	public void CloseDrums()
 	{
 		revolverAnim.CloseDrum();
-	}
+        boostrap.ActivateShootingBottom();
+    }
 
 	private IEnumerator ChipsBetAwait(float duration, List<ChipType> chips)
 	{

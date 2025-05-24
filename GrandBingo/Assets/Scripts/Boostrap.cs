@@ -7,7 +7,7 @@ public class Boostrap : MonoBehaviour
     public Player player;
     public Player opponent;
 
-	public int round;
+	public int round = 1;
 
     
     public bool turn = true;
@@ -23,6 +23,10 @@ public class Boostrap : MonoBehaviour
 
 	private void Update()
     {
+		if (Input.GetMouseButtonDown(0))
+		{
+			Betted();
+		}
 
 
         if (bid)
@@ -59,8 +63,13 @@ public class Boostrap : MonoBehaviour
 			}
 		}
 
-
-
-
 	}
+
+	public void Betted()
+	{
+		List<ChipType> opponentBets = opponent.BetChips(round > 6 ? 6 : round);
+
+		opponent.Betting(opponentBets);
+	}
+
 }

@@ -1,17 +1,27 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public class Chip : MonoBehaviour
 {
     public Boostrap boostrap;
 	public float up = 1.86f;
+	public bool players = false;
+	public Vector3 target;
 
     private Rigidbody rb;
     private GameObject outline;
 	private bool isGrabbed = false;
 
 
-    void Start()
+	public void Betting()
+	{
+		StartCoroutine(Reach(target));
+		StartCoroutine(Up());
+	}
+
+
+    private void Start()
     {
         rb = GetComponent<Rigidbody>();
         outline = transform.GetChild(0).gameObject;
@@ -19,11 +29,13 @@ public class Chip : MonoBehaviour
 
 	private void OnMouseEnter()
 	{
+		if (!players) return;
 		outline.SetActive(true);
 	}
 
     private void OnMouseExit()
-    {
+	{
+		if (!players) return;
 		if (isGrabbed)
 		{
 			return;
@@ -33,6 +45,7 @@ public class Chip : MonoBehaviour
 
 	private void OnMouseDown()
 	{
+		if (!players) return;
 		if (boostrap.bid && boostrap.turn)
 		{
 			rb.useGravity = false;
@@ -43,6 +56,7 @@ public class Chip : MonoBehaviour
 
 	private void OnMouseUp()
 	{
+		if (!players) return;
 		StopAllCoroutines();
 		rb.useGravity = true;
 		isGrabbed = false;
@@ -50,6 +64,7 @@ public class Chip : MonoBehaviour
 
 	private void OnMouseDrag()
 	{
+		if (!players) return;
 		Vector3 place = CameraManager.PointOnCamera();
 
 		place.y = up;
@@ -86,7 +101,19 @@ public class Chip : MonoBehaviour
 			transform.position = Vector3.Lerp(transform.position, dest, 0.1f);
 			yield return null;
 		}
-
+		
 		Debug.Log("UPENDED");
+	}
+
+	private IEnumerator Reach(Vector3 targetPosition)
+	{
+		float elapsed = 0f;
+
+		while (elapsed < 1 && (transform.position - targetPosition).magnitude > 0.14f)
+		{
+			transform.position = Vector3.Lerp(transform.position, targetPosition, elapsed / 1);
+			elapsed += Time.deltaTime;
+			yield return null;
+		}
 	}
 }

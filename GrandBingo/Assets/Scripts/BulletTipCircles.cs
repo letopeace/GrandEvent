@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class BulletTipCircles : MonoBehaviour
 {
+	public Boostrap boostrap;
+	public int ind;
+
 	private GameObject circle;
+	
 
 	private void Start()
 	{

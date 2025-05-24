@@ -9,6 +9,7 @@ public class Boostrap : MonoBehaviour
     public Player opponent;
 
 	public int round = 1;
+	public int remainBullet;
 
     
     public bool turn = true;
@@ -22,8 +23,10 @@ public class Boostrap : MonoBehaviour
 	private void Start()
 	{
 		bid = true;
-		//bottomYourSelf?.SetActive(false);
-		//bottomOpponent?.SetActive(false);
+		bottomYourSelf?.SetActive(false);
+		bottomOpponent?.SetActive(false);
+
+		remainBullet = round;
 	}
 
 
@@ -72,7 +75,6 @@ public class Boostrap : MonoBehaviour
 		if (turn)
 		{
 			player.Take();
-			player.OpenDrums();
 		}
 		else opponent.Take();
 	}
@@ -93,8 +95,8 @@ public class Boostrap : MonoBehaviour
 
 	public void ActivateShootingBottom()
 	{
-		//bottomOpponent?.SetActive(true);
-		//bottomYourSelf?.SetActive(true);
+		bottomOpponent?.SetActive(true);
+		bottomYourSelf?.SetActive(true);
 	}
 
 }

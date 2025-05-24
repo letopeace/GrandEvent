@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BulletTipCircles : MonoBehaviour
 {
+	public Boostrap boostrap;
 	public RevolverAnim revolver;
 	public int ind;
 
@@ -51,11 +52,16 @@ public class BulletTipCircles : MonoBehaviour
 					revolver.Bullet_6_Inverse(); break;
 
 			}
-
+			boostrap.remainBullet++;
 			isChoosen = false;
 		}
 		else
 		{
+			if (boostrap.remainBullet <= 0)
+			{
+				return;
+			}
+
 			switch (ind)
 			{
 				case 1:
@@ -77,6 +83,8 @@ public class BulletTipCircles : MonoBehaviour
 					revolver.Bullet_6(); break;
 
 			}
+
+			boostrap.remainBullet--;
 
 			isChoosen = true;
 		}

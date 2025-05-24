@@ -74,7 +74,8 @@ public class Player : MonoBehaviour
 
 	public void RevolverHasTaken()
 	{
-
+		isHoldingRevolver = true;
+		boostrap.ActivateShootingBottom();
 	}
 
 	public void SpinAnimate(bool turn)
@@ -98,6 +99,15 @@ public class Player : MonoBehaviour
 		cameraM.freeze = false;
 	}
 
+	public void ShootOpponent()
+	{
+
+	}
+
+	public void ShootYourSelf()
+	{
+
+	}
 
 	public void TakeDamage(string chip)
     {

@@ -16,9 +16,14 @@ public class Boostrap : MonoBehaviour
     public bool fraud = false;
     public bool shoot = false;
 
+	[SerializeField] private GameObject bottomYourSelf;
+	[SerializeField] private GameObject bottomOpponent;
+
 	private void Start()
 	{
 		bid = true;
+		bottomYourSelf.SetActive(false);
+		bottomOpponent.SetActive(false);
 	}
 
 
@@ -83,6 +88,12 @@ public class Boostrap : MonoBehaviour
 		bid = false;
 
 		fraud = true;
+	}
+
+	public void ActivateShootingBottom()
+	{
+		bottomOpponent.SetActive(true);
+		bottomYourSelf.SetActive(true);
 	}
 
 }

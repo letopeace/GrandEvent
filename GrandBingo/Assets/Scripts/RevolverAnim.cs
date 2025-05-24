@@ -32,6 +32,19 @@ public class RevolverAnim : MonoBehaviour
 		Clear();
 	}
 
+	public void Initialize()
+	{
+		bool[] newDrum = new bool[6];
+		newDrum[0] = bullet_1.activeSelf;
+		newDrum[1] = bullet_2.activeSelf;
+		newDrum[2] = bullet_3.activeSelf;
+		newDrum[3] = bullet_4.activeSelf;
+		newDrum[4] = bullet_5.activeSelf;
+		newDrum[5] = bullet_6.activeSelf;
+
+		revolver = new Revolver(newDrum);
+	}
+
 	public void RotationReset()
 	{
 		parentOffset.eulerAngles = Vector3.zero;

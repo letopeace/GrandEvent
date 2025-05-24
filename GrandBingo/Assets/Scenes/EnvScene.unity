@@ -146,14 +146,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1049086284}
   opponent: {fileID: 685779125}
-  round: 1
+  round: 2
   turn: 1
   bid: 0
   fraud: 0
   shoot: 0
   bottomYourSelf: {fileID: 1264608124}
   bottomOpponent: {fileID: 303467721}
-  spinButton: {fileID: 0}
+  spinButton: {fileID: 1308889578}
 --- !u!4 &22811760 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8123077160151141418, guid: 4a4ac842c3eb24f448b2d170d5e0ccea, type: 3}
@@ -3341,7 +3341,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1308889581}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 13859937}
+        m_TargetAssemblyTypeName: Boostrap, Assembly-CSharp
+        m_MethodName: Spinner
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1308889581
 MonoBehaviour:
   m_ObjectHideFlags: 0

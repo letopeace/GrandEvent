@@ -9,11 +9,12 @@ public class Boostrap : MonoBehaviour
     public Player opponent;
 
 	public int round = 1;
-	public int remainBullet { get { return remainBullet; } set { UpdateSpinButton(); _remainBullet = value; } }
+	public int remainBullet { get { return _remainBullet; } set { _remainBullet = value; UpdateSpinButton(); } }
 	private int _remainBullet;
+	private bool spinButtonBlocker = true;
 
-    
-    public bool turn = true;
+
+	public bool turn = true;
     public bool bid = false;
     public bool fraud = false;
     public bool shoot = false;
@@ -74,6 +75,9 @@ public class Boostrap : MonoBehaviour
 
 	public void UpdateSpinButton()
 	{
+		if (spinButtonBlocker)
+			return;
+
 		if (_remainBullet == 0)
 		{
 			spinButton?.SetActive(true);
@@ -90,6 +94,7 @@ public class Boostrap : MonoBehaviour
 		if (turn)
 		{
 			player.Take();
+			spinButtonBlocker = false;
 		}
 		else opponent.Take();
 	}
@@ -112,7 +117,8 @@ public class Boostrap : MonoBehaviour
 	{
 		if (turn)
 		{
-			player.SpinAnimate(turn);
+			player.Reload();
+			spinButtonBlocker = false;
 		}
 	}
 

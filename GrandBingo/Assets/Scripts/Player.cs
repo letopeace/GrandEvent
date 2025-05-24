@@ -90,6 +90,8 @@ public class Player : MonoBehaviour
 		StartCoroutine(SpinRevolver(temperaryTurn));
 	}
 
+	
+
 	public void CameraFreeze()
 	{
 		cameraM.freeze = true;
@@ -186,6 +188,19 @@ public class Player : MonoBehaviour
 		revolverAnim.CloseDrum();
         boostrap.ActivateShootingBottom();
     }
+
+	public void SpinDrums()
+	{
+		revolverAnim.Spin();
+	}
+
+	public void Reload()
+	{
+		animator.SetTrigger("Close");
+		revolverAnim.Initialize();
+		revolverAnim.revolver.Randomize();
+		revolverAnim.Clear();
+	}
 
 	private IEnumerator ChipsBetAwait(float duration, List<ChipType> chips)
 	{

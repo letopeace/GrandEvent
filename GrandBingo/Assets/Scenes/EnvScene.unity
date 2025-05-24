@@ -4020,6 +4020,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 798835532}
     m_Modifications:
+    - target: {fileID: 146079749980749016, guid: 5c1220e625a889e42a0ba7bab6bfe5dc, type: 3}
+      propertyPath: ind
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 146079749980749016, guid: 5c1220e625a889e42a0ba7bab6bfe5dc, type: 3}
+      propertyPath: revolver
+      value: 
+      objectReference: {fileID: 2047963558}
+    - target: {fileID: 885449681750785668, guid: 5c1220e625a889e42a0ba7bab6bfe5dc, type: 3}
+      propertyPath: ind
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 885449681750785668, guid: 5c1220e625a889e42a0ba7bab6bfe5dc, type: 3}
+      propertyPath: revolver
+      value: 
+      objectReference: {fileID: 2047963558}
+    - target: {fileID: 1671006062037127505, guid: 5c1220e625a889e42a0ba7bab6bfe5dc, type: 3}
+      propertyPath: ind
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1671006062037127505, guid: 5c1220e625a889e42a0ba7bab6bfe5dc, type: 3}
+      propertyPath: revolver
+      value: 
+      objectReference: {fileID: 2047963558}
     - target: {fileID: 2775630528623835369, guid: 5c1220e625a889e42a0ba7bab6bfe5dc, type: 3}
       propertyPath: m_LocalScale.x
       value: 22.625046
@@ -4072,6 +4096,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3728327449516181660, guid: 5c1220e625a889e42a0ba7bab6bfe5dc, type: 3}
+      propertyPath: ind
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3728327449516181660, guid: 5c1220e625a889e42a0ba7bab6bfe5dc, type: 3}
+      propertyPath: revolver
+      value: 
+      objectReference: {fileID: 2047963558}
+    - target: {fileID: 4631607042106241680, guid: 5c1220e625a889e42a0ba7bab6bfe5dc, type: 3}
+      propertyPath: ind
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4631607042106241680, guid: 5c1220e625a889e42a0ba7bab6bfe5dc, type: 3}
+      propertyPath: revolver
+      value: 
+      objectReference: {fileID: 2047963558}
+    - target: {fileID: 4682277145389073660, guid: 5c1220e625a889e42a0ba7bab6bfe5dc, type: 3}
+      propertyPath: ind
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4682277145389073660, guid: 5c1220e625a889e42a0ba7bab6bfe5dc, type: 3}
+      propertyPath: revolver
+      value: 
+      objectReference: {fileID: 2047963558}
     - target: {fileID: 8081281400186731304, guid: 5c1220e625a889e42a0ba7bab6bfe5dc, type: 3}
       propertyPath: m_Name
       value: revolver

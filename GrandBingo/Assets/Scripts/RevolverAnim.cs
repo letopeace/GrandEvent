@@ -8,6 +8,7 @@ public class RevolverAnim : MonoBehaviour
     public Transform parentOffset;
 	public ParticleSystem shootingEffect;
 	public GameObject canvas;
+	public Revolver revolver;
 
 	public GameObject bullet_1;
 	public GameObject bullet_2;
@@ -114,5 +115,48 @@ public class RevolverAnim : MonoBehaviour
 	{
 		bullet_6.SetActive(true);
 		animator.SetTrigger("6");
+	}
+
+
+	public void Bullet_1_Inverse()
+	{
+		animator.SetTrigger("1_");
+		StartCoroutine(SetFalse(bullet_1));
+	}
+
+	public void Bullet_2_Inverse()
+	{
+		StartCoroutine(SetFalse(bullet_2));
+		animator.SetTrigger("2_");
+	}
+
+	public void Bullet_3_Inverse()
+	{
+		StartCoroutine(SetFalse(bullet_3));
+		animator.SetTrigger("3_");
+	}
+
+	public void Bullet_4_Inverse()
+	{
+		StartCoroutine(SetFalse(bullet_4));
+		animator.SetTrigger("4_");
+	}
+
+	public void Bullet_5_Inverse()
+	{
+		StartCoroutine(SetFalse(bullet_5));
+		animator.SetTrigger("5_");
+	}
+
+	public void Bullet_6_Inverse()
+	{
+		StartCoroutine(SetFalse(bullet_6));
+		animator.SetTrigger("6_");
+	}
+
+	private IEnumerator SetFalse(GameObject bullet)
+	{
+		yield return new WaitForSeconds(0.167f);
+		bullet.SetActive(false);
 	}
 }

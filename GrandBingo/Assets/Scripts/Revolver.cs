@@ -57,13 +57,24 @@ public class Revolver
     public bool Shoot()
     {
         Iteration(); 
-        return drum[0];
+        return drum[5];
     }
 
     public bool[] Show()
     {
 		return (bool[])drum.Clone();
 	}
+
+    public int CountOfRemainBullet()
+    {
+        int res = 0;
+        foreach (bool b in drum)
+        {
+            res = b ? res++ : res;
+        }
+
+        return res;
+    }
 
     private void Iteration()
     {

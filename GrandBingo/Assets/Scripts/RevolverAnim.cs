@@ -83,6 +83,13 @@ public class RevolverAnim : MonoBehaviour
 		bullet_4.SetActive(false);
 		bullet_5.SetActive(false);
 		bullet_6.SetActive(false);
+
+		circle_1.SetActive(false);
+		circle_2.SetActive(false);
+		circle_3.SetActive(false);
+		circle_4.SetActive(false);
+		circle_5.SetActive(false);
+		circle_6.SetActive(false);
 	}
 
 	public void ShowTip()

@@ -218,19 +218,17 @@ public class Player : MonoBehaviour
 
 	public void SetRandomBulletOrder()
 	{
-		int number = boostrap.remainBullet;
-		while(number > 0)
-		{
-			int id = random.Next(0, 6);
-			if (id == 0 && revolverAnim.bullet_1.activeSelf == false) revolverAnim.bullet_1.SetActive(true);
-			else if (id == 1 && revolverAnim.bullet_2.activeSelf == false) revolverAnim.bullet_2.SetActive(true);
-			else if (id == 2 && revolverAnim.bullet_2.activeSelf == false) revolverAnim.bullet_3.SetActive(true);
-			else if (id == 3 && revolverAnim.bullet_2.activeSelf == false) revolverAnim.bullet_4.SetActive(true);
-			else if (id == 4 && revolverAnim.bullet_2.activeSelf == false) revolverAnim.bullet_5.SetActive(true);
-			else if (id == 5 && revolverAnim.bullet_2.activeSelf == false) revolverAnim.bullet_6.SetActive(true);
-			else number++;
-			number--;
-        }
+		int number = boostrap.round;
+		Revolver newRevolver = new Revolver(number);
+
+		bool[] bullets = newRevolver.Show();
+
+		revolverAnim.bullet_1.SetActive(bullets[0]);
+		revolverAnim.bullet_2.SetActive(bullets[1]);
+		revolverAnim.bullet_3.SetActive(bullets[2]);
+		revolverAnim.bullet_4.SetActive(bullets[3]);
+		revolverAnim.bullet_5.SetActive(bullets[4]);
+		revolverAnim.bullet_6.SetActive(bullets[5]);
 	}
 
 	private IEnumerator ChipsBetAwait(float duration, List<ChipType> chips)
@@ -349,9 +347,10 @@ public class Player : MonoBehaviour
 
 	private IEnumerator SpinRevolver(bool turn)
 	{
+		Transform _revolver = revolver.parent;
+
 		float duration = 2.5f; // сколько секунд длится вращение
-		float totalRotations = -5f; // сколько оборотов (1 оборот = 360 градусов)
-		float startAngle = revolver.eulerAngles.y;
+		float startAngle = _revolver.eulerAngles.y;
 
 		float targetOffset = turn ? -1350 : -1170f;
 		float endAngle = startAngle + /*totalRotations * 360f +*/ targetOffset;
@@ -367,12 +366,12 @@ public class Player : MonoBehaviour
 			float smoothT = 1 - Mathf.Pow(1 - t, 3);
 
 			float currentAngle = Mathf.Lerp(startAngle, endAngle, smoothT);
-			revolver.eulerAngles = new Vector3(0, currentAngle, 0);
+			_revolver.eulerAngles = new Vector3(0, currentAngle, 0);
 
 			yield return null;
 		}
 
-		revolver.eulerAngles = new Vector3(0, endAngle, 0); // точная установка финального угла
+		_revolver.eulerAngles = new Vector3(0, endAngle, 0); // точная установка финального угла
 		yield return new WaitForSeconds(0.5f);
 		boostrap.TakeRevolver();
 	}
@@ -387,8 +386,8 @@ public class Player : MonoBehaviour
 			revolver.rotation = hand.rotation;
 			yield return null;
 		}
-		revolver.localPosition = new Vector3(0.174f, 0f, -0.187f);
 		revolver.eulerAngles = Vector3.zero;
+		revolver.position = new Vector3(-2.82299995f, 1.59899998f, -0.0820000097f);
 	}
 
 	public void HoldRevolver()

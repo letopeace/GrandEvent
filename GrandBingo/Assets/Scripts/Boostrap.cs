@@ -120,6 +120,11 @@ public class Boostrap : MonoBehaviour
 			player.Reload();
 			spinButtonBlocker = false;
 		}
+		else
+		{
+			opponent.SetRandomBulletOrder();
+			opponent.Reload();
+		}
 	}
 
 	public void ActivateShootingBottom()

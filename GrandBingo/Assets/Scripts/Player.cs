@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 using UnityEngine.XR;
 
 public class Player : MonoBehaviour
@@ -10,6 +11,7 @@ public class Player : MonoBehaviour
 	public Boostrap boostrap;
 	public Animator animator;
 	public CameraManager cameraM;
+	public bool isPlayer;
 
 	public Chip handChip;
 	public Chip eyeChip;
@@ -71,6 +73,7 @@ public class Player : MonoBehaviour
 	public void Shoot()
 	{
 		bool isShoot = revolverAnim.revolver.Shoot();
+		Debug.Log(isShoot);
         
     }
 
@@ -181,7 +184,12 @@ public class Player : MonoBehaviour
 
 	public void OpenDrums()
 	{
-		revolverAnim.OpenDrum();
+		if (isPlayer) revolverAnim.OpenDrum();
+		else
+		{
+			boostrap.Spinner();
+		}
+		
 	}
 	public void CloseDrums()
 	{
@@ -200,6 +208,29 @@ public class Player : MonoBehaviour
 		revolverAnim.Initialize();
 		revolverAnim.revolver.Randomize();
 		revolverAnim.Clear();
+
+		if (!isPlayer)
+		{
+			if (random.Next(0, 10) < 4) ShootYourSelf();
+			else ShootOpponent();
+		}
+	}
+
+	public void SetRandomBulletOrder()
+	{
+		int number = boostrap.remainBullet;
+		while(number > 0)
+		{
+			int id = random.Next(0, 6);
+			if (id == 0 && revolverAnim.bullet_1.activeSelf == false) revolverAnim.bullet_1.SetActive(true);
+			else if (id == 1 && revolverAnim.bullet_2.activeSelf == false) revolverAnim.bullet_2.SetActive(true);
+			else if (id == 2 && revolverAnim.bullet_2.activeSelf == false) revolverAnim.bullet_3.SetActive(true);
+			else if (id == 3 && revolverAnim.bullet_2.activeSelf == false) revolverAnim.bullet_4.SetActive(true);
+			else if (id == 4 && revolverAnim.bullet_2.activeSelf == false) revolverAnim.bullet_5.SetActive(true);
+			else if (id == 5 && revolverAnim.bullet_2.activeSelf == false) revolverAnim.bullet_6.SetActive(true);
+			else number++;
+			number--;
+        }
 	}
 
 	private IEnumerator ChipsBetAwait(float duration, List<ChipType> chips)

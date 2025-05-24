@@ -5,6 +5,7 @@ using UnityEngine;
 public class Chip : MonoBehaviour
 {
     public Boostrap boostrap;
+	public ChipTriggerZone destinationTrigger;
 	public float up = 1.86f;
 	public bool players = false;
 	public Vector3 target;
@@ -50,6 +51,8 @@ public class Chip : MonoBehaviour
 			rb.useGravity = false;
 			StartCoroutine(Up());
 			isGrabbed = true;
+
+			destinationTrigger.Show();
 		}
 	}
 
@@ -59,6 +62,8 @@ public class Chip : MonoBehaviour
 		StopAllCoroutines();
 		rb.useGravity = true;
 		isGrabbed = false;
+
+		destinationTrigger.Hide();
 	}
 
 	private void OnMouseDrag()

@@ -94,7 +94,17 @@ public class Chip : MonoBehaviour
 		transform.position = place;
 	}
 
+	public void ChipDestroy()
+	{
+		GetComponent<Animator>().SetTrigger("Destroy");
+		transform.position = new Vector3(0f, transform.position.y, 0f);
 
+	}
+
+	public void DestroyYourSelf()
+	{
+		Destroy(gameObject);
+	}
 	private IEnumerator Up()
 	{
 		Debug.Log("UPSTARTED");

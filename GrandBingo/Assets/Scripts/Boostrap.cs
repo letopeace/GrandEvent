@@ -115,6 +115,9 @@ public class Boostrap : MonoBehaviour
 
 	public void Spinner()
 	{
+		fraud = false;
+		shoot = true;
+
 		if (turn)
 		{
 			player.Reload();

@@ -34,7 +34,13 @@ public class ChipTriggerZone : MonoBehaviour
 		if (other.tag == "Chip")
 		{
 			currentCount++;
-			
+
+			Chip chip = other.GetComponent<Chip>();
+			if (chip.players)
+				boostrap.player.BetChip(chip.chipType);
+			else
+				boostrap.opponent.BetChip(chip.chipType);
+
 			if (currentCount == boostrap.round)
 			{
 				ShowButton();
@@ -51,6 +57,13 @@ public class ChipTriggerZone : MonoBehaviour
 		if (other.tag == "Chip")
 		{
 			currentCount--;
+
+			Chip chip = other.GetComponent<Chip>();
+			if (chip.players)
+				boostrap.player.BetChipCancel(chip.chipType);
+			else
+				boostrap.opponent.BetChipCancel(chip.chipType);
+            
 
 			if (currentCount == boostrap.round)
 			{

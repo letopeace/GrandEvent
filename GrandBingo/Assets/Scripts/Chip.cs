@@ -9,6 +9,7 @@ public class Chip : MonoBehaviour
 	public float up = 1.86f;
 	public bool players = false;
 	public Vector3 target;
+	public ChipType chipType;
 
     private Rigidbody rb;
     private GameObject outline;

@@ -25,12 +25,14 @@ public class Player : MonoBehaviour
 	public Transform revolver, hand;
 	public RevolverAnim revolverAnim;
 	public List<ChipType> available_chips = new List<ChipType>{ ChipType.hand, ChipType.eye, ChipType.leg, ChipType.stomach, ChipType.lungs, ChipType.kidney, ChipType.liver, ChipType.head};
+	public List<ChipType> betted_chips = new List<ChipType>();
+	public Animation damageAnim;
 
 	public int handCount = 2;
     public int eyeCount = 2;
     public int legCount = 4;
 
-    public int stomach = 1, lungs = 1, kidney = 1, liver = 1;
+    public int stomach = 1, lungs = 1, kidney = 1, liver = 1, head = 1;
 	public bool isHoldingRevolver = false;
 
 	private bool temperaryTurn = true;
@@ -72,8 +74,7 @@ public class Player : MonoBehaviour
 
 	public void Shoot()
 	{
-		bool isShoot = revolverAnim.revolver.Shoot();
-		Debug.Log(isShoot);
+		
         
     }
 
@@ -97,12 +98,65 @@ public class Player : MonoBehaviour
 
 	public void CameraFreeze()
 	{
-		cameraM.freeze = true;
+		if (isPlayer)
+			cameraM.freeze = true;
 	}
 
 	public void CameraUnfreeze()
 	{
-		cameraM.freeze = false;
+		if (isPlayer)
+			cameraM.freeze = false;
+	}
+
+
+	public void ShootOpponentCheck()
+	{
+		bool isShoot = revolverAnim.revolver.Shoot();
+		Debug.Log(isShoot);
+		if (isShoot )
+		{
+			revolverAnim.Shoot();
+
+
+			if (isPlayer)
+			{
+				boostrap.opponent.DestroyRandomChip();
+			}
+			else
+			{
+				boostrap.player.DestroyRandomChip();
+				damageAnim.Play();
+			}
+		}
+
+	}
+
+	public void ShootYourSelfCheck()
+	{
+		bool isShoot = revolverAnim.revolver.Shoot();
+		Debug.Log(isShoot);
+		if (isShoot)
+		{
+			revolverAnim.Shoot();
+
+
+			if (isPlayer)
+			{
+				boostrap.player.DestroyRandomChip();
+				damageAnim.Play();
+			}
+			else
+			{
+				boostrap.opponent.DestroyRandomChip();
+			}
+		}
+	}
+
+
+	public void ActivateShootingBottom()
+	{
+		if(boostrap.shoot && isPlayer)
+			boostrap.ActivateShootingBottom();
 	}
 
 	public void ShootOpponent()
@@ -172,6 +226,8 @@ public class Player : MonoBehaviour
 			result.Add(res);
 		}
 
+		betted_chips = new(result);
+
 		return result;
 	}
 
@@ -184,17 +240,14 @@ public class Player : MonoBehaviour
 
 	public void OpenDrums()
 	{
-		if (isPlayer) revolverAnim.OpenDrum();
-		else
-		{
-			boostrap.Spinner();
-		}
+		revolverAnim.OpenDrum();
+		if (!isPlayer)
+			animator.SetTrigger("Close");
 		
 	}
 	public void CloseDrums()
 	{
 		revolverAnim.CloseDrum();
-        boostrap.ActivateShootingBottom();
     }
 
 	public void SpinDrums()
@@ -204,17 +257,26 @@ public class Player : MonoBehaviour
 
 	public void Reload()
 	{
-		animator.SetTrigger("Close");
+
 		revolverAnim.Initialize();
 		revolverAnim.revolver.Randomize();
 		revolverAnim.Clear();
 
-		if (!isPlayer)
+		if (isPlayer)
 		{
+			animator.SetTrigger("Close");
+		}
+
+		else
+		{
+			animator.SetTrigger("Close");
+
+
 			if (random.Next(0, 10) < 4) ShootYourSelf();
 			else ShootOpponent();
 		}
 	}
+
 
 	public void SetRandomBulletOrder()
 	{
@@ -276,7 +338,39 @@ public class Player : MonoBehaviour
 	}
 
 
-	
+	public void BetChip(ChipType chip)
+	{
+		betted_chips.Add(chip);
+	}
+	public void BetChipCancel(ChipType chip)
+	{
+		betted_chips.Remove(chip);
+	}
+
+	public void DestroyRandomChip()
+	{
+		List<ChipType> chips = new(betted_chips);
+		ChipType willDestroyChip;
+
+		bool contains = chips.Contains(ChipType.head);
+
+		if (contains)
+		{
+			if (chips.Count > 1)
+			{
+				chips.Remove(ChipType.head);
+				willDestroyChip = chips[random.Next(chips.Count)];
+			}
+			else
+				willDestroyChip = ChipType.head;
+		}
+		else
+		{
+			willDestroyChip = chips[random.Next(chips.Count)];
+		}
+
+		
+	}
 
 	private void HandUse()
 	{
@@ -308,6 +402,29 @@ public class Player : MonoBehaviour
 		}
 	}
 
+
+	private void ChipDestroy(ChipType type)
+	{
+		switch (type)
+		{
+			case ChipType.hand: HandDestroy(); break;
+
+			case ChipType.leg: LegDestroy(); break;
+
+			case ChipType.eye: EyeDestroy(); break;
+
+			case ChipType.kidney: KidneyDestroy(); break;
+
+			case ChipType.lungs: LungsDestroy(); break;
+
+			case ChipType.liver: LiverDestroy(); break;
+
+			case ChipType.stomach: StomachDestroy(); break;
+
+			case ChipType.head: HeadDestroy(); break;
+
+		}
+	}
 
 	private void HandDestroy()
 	{
@@ -342,6 +459,11 @@ public class Player : MonoBehaviour
 	private void LiverDestroy()
 	{
 		liver = 0;
+	}
+
+	private void HeadDestroy()
+	{
+		head = 0;
 	}
 
 

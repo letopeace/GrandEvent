@@ -146,7 +146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1049086284}
   opponent: {fileID: 685779125}
-  round: 2
+  round: 1
   miniRound: 1
   turn: 1
   bid: 0

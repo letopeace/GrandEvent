@@ -1,5 +1,4 @@
 using System.Collections;
-using TMPro;
 using UnityEngine;
 
 public class Chip : MonoBehaviour
@@ -147,9 +146,9 @@ public class Chip : MonoBehaviour
 	{
 		yield return new WaitForSeconds(2);
 		if (players)
-			boostrap.player.betted_chips.Remove(chipType);
+			Debug.Log(boostrap.player.betted_chips.Remove(chipType));
 		else
-			boostrap.opponent.betted_chips.Remove(chipType);
+			Debug.Log(boostrap.opponent.betted_chips.Remove(chipType));
 		Destroy(gameObject);
 	}
 

@@ -1,8 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using UnityEditor;
 using UnityEngine;
+using System;
 
 public class Boostrap : MonoBehaviour
 {
@@ -155,6 +154,16 @@ public class Boostrap : MonoBehaviour
 	{
 		miniRound = 1;
 		round++;
+
+		remainBullet = round;	
+		
+		turn = true;
+		bid = true;
+		fraud = false;
+		shoot = false;
+
+		Debug.Log("NextRound");
+
 		for(int i = 0;i<opponent.betted_chips.Count;i++)
 		{
 			if (opponent.betted_chips[i] == ChipType.hand) opponent.handChip.Return();

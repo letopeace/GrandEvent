@@ -6,15 +6,34 @@ public class Chip : MonoBehaviour
 {
     public Boostrap boostrap;
 	public ChipTriggerZone destinationTrigger;
-	public float up = 1.86f;
+	public float up = 1.86f, brokeForce = 1;
 	public bool players = false;
 	public Vector3 target;
 	public ChipType chipType;
 
+	private Rigidbody[] chips = new Rigidbody[5];
     private Rigidbody rb;
     private GameObject outline;
 	private bool isGrabbed = false;
 
+
+	public static Vector3 GetRandomUpwardDirection(float maxAngleDegrees)
+	{
+		// Случайный угол в радианах от 0 до maxAngleDegrees
+		float angle = Random.Range(0f, maxAngleDegrees);
+		float azimuth = Random.Range(0f, 360f);
+
+		// Преобразуем в сферические координаты
+		float angleRad = angle * Mathf.Deg2Rad;
+		float azimuthRad = azimuth * Mathf.Deg2Rad;
+
+		// Сферические -> декартовы координаты
+		float x = Mathf.Sin(angleRad) * Mathf.Cos(azimuthRad);
+		float z = Mathf.Sin(angleRad) * Mathf.Sin(azimuthRad);
+		float y = Mathf.Cos(angleRad); // Всегда вверх
+
+		return new Vector3(x, y, z).normalized;
+	}
 
 	public void Betting()
 	{
@@ -22,11 +41,15 @@ public class Chip : MonoBehaviour
 	}
 
 
-    private void Start()
-    {
-        rb = GetComponent<Rigidbody>();
-        outline = transform.GetChild(0).gameObject;
-    }
+	private void Start()
+	{
+		rb = GetComponent<Rigidbody>();
+		outline = transform.GetChild(0).gameObject;
+		for (int i = 0; i < 5; i++)
+		{
+			chips[i] = transform.GetChild(i + 1).GetComponent<Rigidbody>();
+		}
+	}
 
 	private void OnMouseEnter()
 	{
@@ -94,13 +117,21 @@ public class Chip : MonoBehaviour
 		transform.position = place;
 	}
 
-	public void ChipDestroy(Player target)
+	public void ChipDestroy()
 	{
-		
+		foreach (Rigidbody chipRb in chips)
+		{
+			Vector3 dir = GetRandomUpwardDirection(35f);
+			chipRb.useGravity = true;
+			chipRb.AddForce(dir * brokeForce);
+		}
+
+		StartCoroutine(DestroyYourSelf());
 	}
 
-	public void DestroyYourSelf()
+	public IEnumerator DestroyYourSelf()
 	{
+		yield return new WaitForSeconds(2);
 		Destroy(gameObject);
 	}
 	private IEnumerator Up()

@@ -147,6 +147,7 @@ MonoBehaviour:
   player: {fileID: 1049086284}
   opponent: {fileID: 685779125}
   round: 2
+  miniRound: 1
   turn: 1
   bid: 0
   fraud: 0

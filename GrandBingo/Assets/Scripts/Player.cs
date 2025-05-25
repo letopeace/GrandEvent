@@ -377,10 +377,13 @@ public class Player : MonoBehaviour
 
 	public void DestroyRandomChip()
 	{
+		if (betted_chips.Count == 0) return;
+
 		List<ChipType> chips = new(betted_chips);
 		ChipType willDestroyChip;
 
 		bool contains = chips.Contains(ChipType.head);
+
 
 		if (contains)
 		{

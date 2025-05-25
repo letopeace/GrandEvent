@@ -11,7 +11,7 @@ public class Chip : MonoBehaviour
 	public Vector3 target, home;
 	public ChipType chipType;
 
-	private Rigidbody[] chips = new Rigidbody[5];
+	public Rigidbody[] chips = new Rigidbody[5];
     private Rigidbody rb;
     private GameObject outline;
 	private bool isGrabbed = false;
@@ -51,10 +51,12 @@ public class Chip : MonoBehaviour
 	{
 		rb = GetComponent<Rigidbody>();
 		outline = transform.GetChild(0).gameObject;
+		/*
 		for (int i = 0; i <= 5; i++)
 		{
 			if (transform.GetChild(i+1).GetComponent<Rigidbody>() != null) chips[i] = transform.GetChild(i + 1).GetComponent<Rigidbody>();
 		}
+		*/
 	}
 
 	private void OnMouseEnter()
@@ -125,21 +127,38 @@ public class Chip : MonoBehaviour
 
 	public void ChipDestroy()
 	{
+		if (gameObject == null) return;
+
 		foreach (Rigidbody chipRb in chips)
 		{
-			Vector3 dir = GetRandomUpwardDirection(30f);
-			chipRb.isKinematic = false;
-			chipRb.AddForce(dir * brokeForce);
+			if (chipRb != null)
+			{
+				Vector3 dir = GetRandomUpwardDirection(30f);
+				chipRb.isKinematic = false;
+				chipRb.AddForce(dir * brokeForce);
+			}
 		}
 
-		StartCoroutine(DestroyYourSelf());
+		if (chips != null)
+			StartCoroutine(DestroyYourSelf());
 	}
 
 	public IEnumerator DestroyYourSelf()
 	{
 		yield return new WaitForSeconds(2);
+		if (players)
+			boostrap.player.betted_chips.Remove(chipType);
+		else
+			boostrap.opponent.betted_chips.Remove(chipType);
 		Destroy(gameObject);
 	}
+
+	private void OnDestroy()
+	{
+		StopAllCoroutines(); // »ли StopCoroutine(Е)
+	}
+
+
 	private IEnumerator Up()
 	{
 		Debug.Log("UPSTARTED");

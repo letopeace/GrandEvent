@@ -172,7 +172,14 @@ MonoBehaviour:
   brokeForce: 200
   players: 0
   target: {x: 0, y: 0, z: 0}
+  home: {x: 0, y: 0, z: 0}
   chipType: 0
+  chips:
+  - {fileID: 6553405269700239790}
+  - {fileID: 6223517572360700030}
+  - {fileID: 7041002776019770801}
+  - {fileID: 7659418339284332706}
+  - {fileID: 2814792738188618066}
 --- !u!65 &5236758981499763971
 BoxCollider:
   m_ObjectHideFlags: 0

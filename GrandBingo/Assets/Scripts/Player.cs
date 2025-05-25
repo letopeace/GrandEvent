@@ -438,49 +438,49 @@ public class Player : MonoBehaviour
 	private void HandDestroy()
 	{
 		handCount = 0;
-		handChip.ChipDestroy();
+		handChip.ChipDestroy(this);
 	}
 
 	private void EyeDestroy()
 	{
 		eyeCount = 0;
-		eyeChip.ChipDestroy();
+		eyeChip.ChipDestroy(this);
 	}
 
 	private void LegDestroy()
 	{
 		legCount = 0;
-		legChip.ChipDestroy();
+		legChip.ChipDestroy(this);
 	}
 
 	private void StomachDestroy()
 	{
 		stomach = 0;
-		stomachChip.ChipDestroy();
+		stomachChip.ChipDestroy(this);
 	}
 
 	private void LungsDestroy()
 	{
 		lungs = 0;
-		lungsChip.ChipDestroy();
+		lungsChip.ChipDestroy(this);
 	}
 
 	private void KidneyDestroy()
 	{
 		kidney = 0;
-		kidneyChip.ChipDestroy();
+		kidneyChip.ChipDestroy(this);
 	}
 
 	private void LiverDestroy()
 	{
 		liver = 0;
-		liverChip.ChipDestroy();
+		liverChip.ChipDestroy(this);
 	}
 
 	private void HeadDestroy()
 	{
 		head = 0;
-		headChip.ChipDestroy();
+		headChip.ChipDestroy(this);
 	}
 
 	private IEnumerator SpinRevolver(bool turn)

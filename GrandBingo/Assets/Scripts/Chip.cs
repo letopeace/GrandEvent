@@ -8,7 +8,7 @@ public class Chip : MonoBehaviour
 	public ChipTriggerZone destinationTrigger;
 	public float up = 1.86f, brokeForce = 1;
 	public bool players = false;
-	public Vector3 target;
+	public Vector3 target, home;
 	public ChipType chipType;
 
 	private Rigidbody[] chips = new Rigidbody[5];
@@ -38,6 +38,12 @@ public class Chip : MonoBehaviour
 	public void Betting()
 	{
 		StartCoroutine(Reach(target));
+	}
+	public void Return()
+	{
+		Vector3 dir = new Vector3(Random.value - 0.5f, 0, Random.value - 0.5f);
+
+		StartCoroutine(Reach(home + dir));
 	}
 
 

@@ -11,8 +11,9 @@ public class Boostrap : MonoBehaviour
 	public int round = 1;
 	public int miniRound = 1;
 	public int remainBullet { get { return _remainBullet; } set { _remainBullet = value; UpdateSpinButton(); } }
-	private int _remainBullet;
+	[SerializeField] private int _remainBullet;
 	public int currentBulletNumber;
+	public RevolverAnim revolverAnim;
 	private bool spinButtonBlocker = true;
 
 
@@ -157,6 +158,7 @@ public class Boostrap : MonoBehaviour
 	{
 		miniRound = 1;
 		round++;
+		revolverAnim.Clear();
 
 		remainBullet = round;
 		currentBulletNumber = round;

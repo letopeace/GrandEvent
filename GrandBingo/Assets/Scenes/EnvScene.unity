@@ -148,7 +148,9 @@ MonoBehaviour:
   opponent: {fileID: 685779125}
   round: 1
   miniRound: 1
+  _remainBullet: 0
   currentBulletNumber: 0
+  revolverAnim: {fileID: 2047963558}
   turn: 1
   bid: 0
   fraud: 0
@@ -3363,7 +3365,7 @@ ParentConstraint:
   m_GameObject: {fileID: 1105347257}
   m_Enabled: 1
   serializedVersion: 2
-  m_Weight: 1
+  m_Weight: 0
   m_TranslationAtRest: {x: -3.009023, y: 0.90480006, z: -1.1855509}
   m_RotationAtRest: {x: -16.065863, y: -18.457293, z: -30.365765}
   m_TranslationOffsets:
@@ -9002,31 +9004,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3491238201839697166, guid: a605902b506f061408f91b390d37e91a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.237
+      value: -3.009023
       objectReference: {fileID: 0}
     - target: {fileID: 3491238201839697166, guid: a605902b506f061408f91b390d37e91a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.07700002
+      value: 0.90480006
       objectReference: {fileID: 0}
     - target: {fileID: 3491238201839697166, guid: a605902b506f061408f91b390d37e91a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.155
+      value: -1.1855509
       objectReference: {fileID: 0}
     - target: {fileID: 3491238201839697166, guid: a605902b506f061408f91b390d37e91a, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9106894
+      value: 0.9373863
       objectReference: {fileID: 0}
     - target: {fileID: 3491238201839697166, guid: a605902b506f061408f91b390d37e91a, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.011203197
+      value: -0.091528594
       objectReference: {fileID: 0}
     - target: {fileID: 3491238201839697166, guid: a605902b506f061408f91b390d37e91a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.4129139
+      value: -0.18938297
       objectReference: {fileID: 0}
     - target: {fileID: 3491238201839697166, guid: a605902b506f061408f91b390d37e91a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0046236757
+      value: -0.27760336
       objectReference: {fileID: 0}
     - target: {fileID: 3491238201839697166, guid: a605902b506f061408f91b390d37e91a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

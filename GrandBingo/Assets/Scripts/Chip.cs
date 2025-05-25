@@ -86,8 +86,9 @@ public class Chip : MonoBehaviour
 			rb.useGravity = false;
 			StartCoroutine(Up());
 			isGrabbed = true;
+            chipAudio.Play();
 
-			destinationTrigger.Show();
+            destinationTrigger.Show();
 		}
 	}
 
@@ -97,7 +98,7 @@ public class Chip : MonoBehaviour
 		StopAllCoroutines();
 		rb.useGravity = true;
 		isGrabbed = false;
-		chipAudio.Play();
+		
 
 		destinationTrigger.Hide();
 	}

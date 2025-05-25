@@ -59,7 +59,9 @@ public class Player : MonoBehaviour
 	public void Take()
 	{
 		animator.SetTrigger("Take");
-		animator.SetTrigger("Open");
+
+		if (boostrap.miniRound == 1)
+			animator.SetTrigger("Open");
 	}
 
 	public void Bid()
@@ -164,6 +166,10 @@ public class Player : MonoBehaviour
 	public void ShootOpponent()
 	{
 		animator.SetTrigger("ShootOpponet");
+
+		boostrap.turn ^= true;
+		
+		boostrap.TakeRevolver();
 	}
 
 	public void ShootYourSelf()

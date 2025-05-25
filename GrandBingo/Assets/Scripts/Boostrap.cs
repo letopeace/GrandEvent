@@ -9,6 +9,7 @@ public class Boostrap : MonoBehaviour
     public Player opponent;
 
 	public int round = 1;
+	public int miniRound = 1;
 	public int remainBullet { get { return _remainBullet; } set { _remainBullet = value; UpdateSpinButton(); } }
 	private int _remainBullet;
 	private bool spinButtonBlocker = true;

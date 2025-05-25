@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
     public Transform revolver, hand;
     public RevolverAnim revolverAnim;
     public Animation damageAnim;
+    public AudioSource ShootSound;
+    public AudioSource MissSound;
 
     public Chip handChip, eyeChip, legChip, stomachChip, lungsChip, kidneyChip, liverChip, headChip;
 
@@ -75,12 +77,12 @@ public class Player : MonoBehaviour
         if (isShoot)
         {
             revolverAnim.Shoot();
+            ShootSound.Play();
             boostrap.currentBulletNumber--;
             (isPlayer ? boostrap.opponent : boostrap.player).DestroyRandomChip();
             if (!isPlayer) damageAnim.Play();
-
-            
         }
+        else MissSound.Play();
 
         if (boostrap.currentBulletNumber != 0) boostrap.NextTurn();
         else boostrap.NextRound();
@@ -94,6 +96,7 @@ public class Player : MonoBehaviour
         if (isShoot)
         {
             revolverAnim.Shoot();
+            ShootSound.Play();
             boostrap.currentBulletNumber--;
             if (boostrap.currentBulletNumber != 0) boostrap.NextTurn();
             else boostrap.NextRound();
@@ -105,6 +108,8 @@ public class Player : MonoBehaviour
             if (random.Next(10) < 4) ShootYourSelf();
             else ShootOpponent();
         }
+
+        if(!isShoot) MissSound.Play();
     }
 
     public void ActivateShootingBottom()

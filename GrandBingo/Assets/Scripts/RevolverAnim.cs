@@ -24,6 +24,7 @@ public class RevolverAnim : MonoBehaviour
 	public GameObject circle_5;
 	public GameObject circle_6;
 
+	public AudioSource BulletAudio;
 
 	private void Start()
 	{
@@ -124,74 +125,86 @@ public class RevolverAnim : MonoBehaviour
 	{
 		bullet_1.SetActive(true);
 		animator.SetTrigger("1");
+		BulletAudio.Play();
 	}
 
 	public void Bullet_2()
 	{
 		bullet_2.SetActive(true);
 		animator.SetTrigger("2");
-	}
+        BulletAudio.Play();
+    }
 
 	public void Bullet_3()
 	{
 		bullet_3.SetActive(true);
 		animator.SetTrigger("3");
-	}
+        BulletAudio.Play();
+    }
 
 	public void Bullet_4()
 	{
 		bullet_4.SetActive(true);
 		animator.SetTrigger("4");
-	}
+        BulletAudio.Play();
+    }
 
 	public void Bullet_5()
 	{
 		bullet_5.SetActive(true);
 		animator.SetTrigger("5");
-	}
+        BulletAudio.Play();
+    }
 
 	public void Bullet_6()
 	{
 		bullet_6.SetActive(true);
 		animator.SetTrigger("6");
-	}
+        BulletAudio.Play();
+    }
 
 
 	public void Bullet_1_Inverse()
 	{
 		animator.SetTrigger("1_");
 		StartCoroutine(SetFalse(bullet_1));
-	}
+        BulletAudio.Play();
+    }
 
 	public void Bullet_2_Inverse()
 	{
 		StartCoroutine(SetFalse(bullet_2));
 		animator.SetTrigger("2_");
-	}
+        BulletAudio.Play();
+    }
 
 	public void Bullet_3_Inverse()
 	{
 		StartCoroutine(SetFalse(bullet_3));
 		animator.SetTrigger("3_");
-	}
+        BulletAudio.Play();
+    }
 
 	public void Bullet_4_Inverse()
 	{
 		StartCoroutine(SetFalse(bullet_4));
 		animator.SetTrigger("4_");
-	}
+        BulletAudio.Play();
+    }
 
 	public void Bullet_5_Inverse()
 	{
 		StartCoroutine(SetFalse(bullet_5));
 		animator.SetTrigger("5_");
-	}
+        BulletAudio.Play();
+    }
 
 	public void Bullet_6_Inverse()
 	{
 		StartCoroutine(SetFalse(bullet_6));
 		animator.SetTrigger("6_");
-	}
+        BulletAudio.Play();
+    }
 
 	private IEnumerator SetFalse(GameObject bullet)
 	{

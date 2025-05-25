@@ -9,6 +9,7 @@ public class Chip : MonoBehaviour
 	public bool players = false;
 	public Vector3 target, home;
 	public ChipType chipType;
+	public AudioSource chipAudio;
 
 	public Rigidbody[] chips = new Rigidbody[5];
     private Rigidbody rb;
@@ -37,10 +38,13 @@ public class Chip : MonoBehaviour
 	public void Betting()
 	{
 		StartCoroutine(Reach(target));
+		chipAudio.Play();
 	}
 	public void Return()
 	{
 		Vector3 dir = new Vector3(Random.value - 0.5f, 0, Random.value - 0.5f);
+
+		chipAudio.Play();
 
 		StartCoroutine(Reach(home + dir));
 	}
@@ -93,6 +97,7 @@ public class Chip : MonoBehaviour
 		StopAllCoroutines();
 		rb.useGravity = true;
 		isGrabbed = false;
+		chipAudio.Play();
 
 		destinationTrigger.Hide();
 	}

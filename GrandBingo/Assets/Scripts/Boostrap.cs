@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEditor;
 using UnityEngine;
 
@@ -72,6 +73,9 @@ public class Boostrap : MonoBehaviour
 			}
 		}
 
+		player.animator.SetBool("turn", turn);
+		opponent.animator.SetBool("turn", !turn);
+
 	}
 
 	public void UpdateSpinButton()
@@ -90,9 +94,13 @@ public class Boostrap : MonoBehaviour
 
 	}
 
-	public void NextTurn()
+	public async Task NextTurn()
 	{
 		turn = !turn;
+		miniRound++;
+
+		await Task.Delay(3000);
+
 		TakeRevolver();
 	}
 
@@ -142,5 +150,33 @@ public class Boostrap : MonoBehaviour
 		bottomOpponent?.SetActive(true);
 		bottomYourSelf?.SetActive(true);
 	}
+
+	public void NextRound()
+	{
+		miniRound = 1;
+		round++;
+		for(int i = 0;i<opponent.betted_chips.Count;i++)
+		{
+			if (opponent.betted_chips[i] == ChipType.hand) opponent.handChip.Return();
+			else if (opponent.betted_chips[i] == ChipType.eye) opponent.eyeChip.Return();
+			else if (opponent.betted_chips[i] == ChipType.leg) opponent.legChip.Return();
+			else if (opponent.betted_chips[i] == ChipType.stomach) opponent.stomachChip.Return();
+			else if (opponent.betted_chips[i] == ChipType.lungs) opponent.lungsChip.Return();
+			else if (opponent.betted_chips[i] == ChipType.kidney) opponent.kidneyChip.Return();
+			else if (opponent.betted_chips[i] == ChipType.liver) opponent.liverChip.Return();
+			else opponent.headChip.Return();
+		}
+        for (int i = 0; i < player.betted_chips.Count; i++)
+        {
+            if (player.betted_chips[i] == ChipType.hand) player.handChip.Return();
+            else if (player.betted_chips[i] == ChipType.eye) player.eyeChip.Return();
+            else if (player.betted_chips[i] == ChipType.leg) player.legChip.Return();
+            else if (player.betted_chips[i] == ChipType.stomach) player.stomachChip.Return();
+            else if (player.betted_chips[i] == ChipType.lungs) player.lungsChip.Return();
+            else if (player.betted_chips[i] == ChipType.kidney) player.kidneyChip.Return();
+            else if (player.betted_chips[i] == ChipType.liver) player.liverChip.Return();
+            else player.headChip.Return();
+        }
+    }
 
 }

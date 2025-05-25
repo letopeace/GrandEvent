@@ -83,6 +83,11 @@ public class Player : MonoBehaviour
 	public void RevolverHasTaken()
 	{
 		isHoldingRevolver = true;
+		if(!isPlayer && boostrap.miniRound != 1)
+		{
+            if(random.Next(0, 10) < 4) ShootYourSelf();
+            else ShootOpponent();
+        }
 	}
 
 	public void SpinAnimate(bool turn)
@@ -133,7 +138,6 @@ public class Player : MonoBehaviour
 				damageAnim.Play();
 			}
 		}
-
 	}
 
 	public void ShootYourSelfCheck()
@@ -143,9 +147,8 @@ public class Player : MonoBehaviour
 
 		if (isShoot)
 		{
+			boostrap.NextTurn();
 			revolverAnim.Shoot();
-            boostrap.NextTurn();
-
 
             if (isPlayer)
 			{
@@ -156,7 +159,21 @@ public class Player : MonoBehaviour
 			{
 				boostrap.opponent.DestroyRandomChip();
 			}
+
+			if(boostrap.remainBullet == 0)
+			{
+				boostrap.NextRound();
+			}
 		}
+		else if (boostrap.turn)
+		{
+
+		}
+		else
+		{
+            if (random.Next(0, 10) < 4) ShootYourSelf();
+            else ShootOpponent();
+        }
 	}
 
 

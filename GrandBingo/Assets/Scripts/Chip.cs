@@ -51,9 +51,9 @@ public class Chip : MonoBehaviour
 	{
 		rb = GetComponent<Rigidbody>();
 		outline = transform.GetChild(0).gameObject;
-		for (int i = 0; i < 5; i++)
+		for (int i = 0; i <= 5; i++)
 		{
-			chips[i] = transform.GetChild(i + 1).GetComponent<Rigidbody>();
+			if (transform.GetChild(i+1).GetComponent<Rigidbody>() != null) chips[i] = transform.GetChild(i + 1).GetComponent<Rigidbody>();
 		}
 	}
 

@@ -121,8 +121,8 @@ public class Chip : MonoBehaviour
 	{
 		foreach (Rigidbody chipRb in chips)
 		{
-			Vector3 dir = GetRandomUpwardDirection(35f);
-			chipRb.useGravity = true;
+			Vector3 dir = GetRandomUpwardDirection(30f);
+			chipRb.isKinematic = false;
 			chipRb.AddForce(dir * brokeForce);
 		}
 

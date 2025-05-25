@@ -242,7 +242,11 @@ public class Player : MonoBehaviour
 	{
 		revolverAnim.OpenDrum();
 		if (!isPlayer)
+		{
 			animator.SetTrigger("Close");
+
+			boostrap.Spinner();
+		}
 		
 	}
 	public void CloseDrums()
@@ -269,8 +273,7 @@ public class Player : MonoBehaviour
 
 		else
 		{
-			animator.SetTrigger("Close");
-
+			//animator.SetTrigger("Close");
 
 			if (random.Next(0, 10) < 4) ShootYourSelf();
 			else ShootOpponent();

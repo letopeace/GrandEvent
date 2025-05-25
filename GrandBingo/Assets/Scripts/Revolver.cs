@@ -56,8 +56,11 @@ public class Revolver
 
     public bool Shoot()
     {
-        Iteration(); 
-        return drum[5];
+        bool res = drum[0];
+        drum[0] = false;
+        Iteration();
+
+        return res;
     }
 
     public bool[] Show()

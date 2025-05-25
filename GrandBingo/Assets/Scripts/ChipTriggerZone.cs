@@ -72,6 +72,7 @@ public class ChipTriggerZone : MonoBehaviour
 			else if (currentCount < boostrap.round) 
 			{
 				Show();
+				HideButton();
 			}
 			else
 			{

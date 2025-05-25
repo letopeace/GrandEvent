@@ -8,7 +8,7 @@ public class RevolverAnim : MonoBehaviour
     public Transform parentOffset;
 	public ParticleSystem shootingEffect;
 	public GameObject canvas;
-	public Revolver revolver;
+	public Revolver revolver = null;
 
 	public GameObject bullet_1;
 	public GameObject bullet_2;
@@ -53,11 +53,13 @@ public class RevolverAnim : MonoBehaviour
 	public void OpenDrum()
 	{
 		animator.SetTrigger("Open");
+		ShowBullets();
 	}
 
 	public void CloseDrum()
 	{
 		animator.SetTrigger("Close");
+		Clear();
 	}
 
 	public void Spin()
@@ -91,6 +93,22 @@ public class RevolverAnim : MonoBehaviour
 		circle_5.SetActive(false);
 		circle_6.SetActive(false);
 	}
+
+	public void ShowBullets()
+	{
+		if (revolver == null) return;
+
+		bool[] bullets = revolver.Show();
+
+		bullet_1.SetActive(bullets[0]);
+		bullet_2.SetActive(bullets[1]);
+		bullet_3.SetActive(bullets[2]);
+		bullet_4.SetActive(bullets[3]);
+		bullet_5.SetActive(bullets[4]);
+		bullet_6.SetActive(bullets[5]);
+	}
+
+	
 
 	public void ShowTip()
 	{

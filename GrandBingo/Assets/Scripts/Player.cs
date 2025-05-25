@@ -116,6 +116,9 @@ public class Player : MonoBehaviour
 		bool isShoot = revolverAnim.revolver.Shoot();
 		Debug.Log(isShoot);
 
+		boostrap.turn ^= true;
+		boostrap.Next();
+
 		if (isShoot)
 		{
 			revolverAnim.Shoot();
@@ -166,10 +169,6 @@ public class Player : MonoBehaviour
 	public void ShootOpponent()
 	{
 		animator.SetTrigger("ShootOpponet");
-
-		boostrap.turn ^= true;
-		
-		boostrap.TakeRevolver();
 	}
 
 	public void ShootYourSelf()

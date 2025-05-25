@@ -96,9 +96,10 @@ public class Chip : MonoBehaviour
 
 	public void ChipDestroy(Player target)
 	{
+		target.available_chips.Remove(chipType);
+		target.betted_chips.Remove(chipType);
 		GetComponent<Animator>().SetTrigger("Destroy");
 		transform.position = new Vector3(0f, transform.position.y, 0f);
-
 	}
 
 	public void DestroyYourSelf()

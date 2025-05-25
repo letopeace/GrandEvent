@@ -12,6 +12,7 @@ public class Boostrap : MonoBehaviour
 	public int miniRound = 1;
 	public int remainBullet { get { return _remainBullet; } set { _remainBullet = value; UpdateSpinButton(); } }
 	private int _remainBullet;
+	public int currentBulletNumber;
 	private bool spinButtonBlocker = true;
 
 
@@ -31,6 +32,7 @@ public class Boostrap : MonoBehaviour
 		bottomOpponent?.SetActive(false);
 
 		remainBullet = round;
+		currentBulletNumber = round;
 	}
 
 
@@ -95,6 +97,7 @@ public class Boostrap : MonoBehaviour
 
 	public async Task NextTurn()
 	{
+		Debug.Log("NextTurn");
 		turn = !turn;
 		miniRound++;
 
@@ -155,7 +158,8 @@ public class Boostrap : MonoBehaviour
 		miniRound = 1;
 		round++;
 
-		remainBullet = round;	
+		remainBullet = round;
+		currentBulletNumber = round;
 		
 		turn = true;
 		bid = true;

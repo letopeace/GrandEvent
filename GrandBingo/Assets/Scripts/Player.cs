@@ -75,13 +75,15 @@ public class Player : MonoBehaviour
         if (isShoot)
         {
             revolverAnim.Shoot();
+            boostrap.currentBulletNumber--;
             (isPlayer ? boostrap.opponent : boostrap.player).DestroyRandomChip();
             if (!isPlayer) damageAnim.Play();
 
-            if (boostrap.remainBullet == 0) boostrap.NextRound();
+            
         }
 
-        if (boostrap.remainBullet != 0) boostrap.NextTurn();
+        if (boostrap.currentBulletNumber != 0) boostrap.NextTurn();
+        else boostrap.NextRound();
     }
 
     public void ShootYourSelfCheck()
@@ -92,11 +94,11 @@ public class Player : MonoBehaviour
         if (isShoot)
         {
             revolverAnim.Shoot();
-            if (boostrap.remainBullet != 0) boostrap.NextTurn();
+            boostrap.currentBulletNumber--;
+            if (boostrap.currentBulletNumber != 0) boostrap.NextTurn();
+            else boostrap.NextRound();
             (isPlayer ? boostrap.player : boostrap.opponent).DestroyRandomChip();
             if (isPlayer) damageAnim.Play();
-
-            if (boostrap.remainBullet == 0) boostrap.NextRound();
         }
         else if (!boostrap.turn)
         {

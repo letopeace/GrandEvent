@@ -160,7 +160,6 @@ public class Chip : MonoBehaviour
 
 	private IEnumerator Up()
 	{
-		Debug.Log("UPSTARTED");
 		while (up - transform.position.y > 0.05f)
 		{
 			Vector3 dest = transform.position;
@@ -170,7 +169,6 @@ public class Chip : MonoBehaviour
 			yield return null;
 		}
 		
-		Debug.Log("UPENDED");
 	}
 
 	private IEnumerator Reach(Vector3 targetPosition)

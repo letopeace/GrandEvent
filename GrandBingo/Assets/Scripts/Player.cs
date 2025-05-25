@@ -116,8 +116,7 @@ public class Player : MonoBehaviour
 		bool isShoot = revolverAnim.revolver.Shoot();
 		Debug.Log(isShoot);
 
-		boostrap.turn ^= true;
-		boostrap.Next();
+		boostrap.NextTurn();
 
 		if (isShoot)
 		{
@@ -145,9 +144,10 @@ public class Player : MonoBehaviour
 		if (isShoot)
 		{
 			revolverAnim.Shoot();
+            boostrap.NextTurn();
 
 
-			if (isPlayer)
+            if (isPlayer)
 			{
 				boostrap.player.DestroyRandomChip();
 				damageAnim.Play();

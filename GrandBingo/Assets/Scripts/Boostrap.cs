@@ -92,7 +92,8 @@ public class Boostrap : MonoBehaviour
 
 	public void NextTurn()
 	{
-		turn ^= true;
+		turn = !turn;
+		TakeRevolver();
 	}
 
 	public void TakeRevolver()

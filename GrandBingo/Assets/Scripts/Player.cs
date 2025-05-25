@@ -113,7 +113,8 @@ public class Player : MonoBehaviour
 	{
 		bool isShoot = revolverAnim.revolver.Shoot();
 		Debug.Log(isShoot);
-		if (isShoot )
+
+		if (isShoot)
 		{
 			revolverAnim.Shoot();
 
@@ -135,6 +136,7 @@ public class Player : MonoBehaviour
 	{
 		bool isShoot = revolverAnim.revolver.Shoot();
 		Debug.Log(isShoot);
+
 		if (isShoot)
 		{
 			revolverAnim.Shoot();
@@ -171,6 +173,7 @@ public class Player : MonoBehaviour
 
 	public void TakeDamage(string chip)
     {
+
         switch (chip)
         {
             case "hand":
@@ -372,7 +375,7 @@ public class Player : MonoBehaviour
 			willDestroyChip = chips[random.Next(chips.Count)];
 		}
 
-		
+		ChipDestroy(willDestroyChip);
 	}
 
 	private void HandUse()
@@ -408,6 +411,9 @@ public class Player : MonoBehaviour
 
 	private void ChipDestroy(ChipType type)
 	{
+
+		animator.SetTrigger("Damaged");
+
 		switch (type)
 		{
 			case ChipType.hand: HandDestroy(); break;

@@ -14,6 +14,7 @@ public class Boostrap : MonoBehaviour
 	[SerializeField] private int _remainBullet;
 	public int currentBulletNumber;
 	public RevolverAnim revolverAnim;
+	public BulletTipCircles[] bulletTipCircles; 
 	private bool spinButtonBlocker = true;
 
 
@@ -159,6 +160,10 @@ public class Boostrap : MonoBehaviour
 		miniRound = 1;
 		round++;
 		revolverAnim.Clear();
+		for(int i = 0; i < bulletTipCircles.Length; i++)
+		{
+			bulletTipCircles[i].isChoosen = false;
+		}
 
 		remainBullet = round;
 		currentBulletNumber = round;

@@ -157,9 +157,10 @@ public class Chip : MonoBehaviour
 			Debug.Log(boostrap.opponent.betted_chips.Remove(chipType));
 		Destroy(gameObject);
 	}
-
+	 
 	private void OnDestroy()
 	{
+		destinationTrigger.currentCount.Remove(this);
 		StopAllCoroutines(); // »ли StopCoroutine(Е)
 	}
 

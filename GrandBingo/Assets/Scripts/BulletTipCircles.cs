@@ -8,7 +8,7 @@ public class BulletTipCircles : MonoBehaviour
 	public int ind;
 
 	private GameObject circle;
-	private bool isChoosen = false;
+	public bool isChoosen = false;
 	
 
 	private void Start()

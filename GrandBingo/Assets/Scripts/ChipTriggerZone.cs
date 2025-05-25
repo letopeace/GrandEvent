@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using System.Collections.Generic;
 
 public class ChipTriggerZone : MonoBehaviour
 {
@@ -7,12 +8,13 @@ public class ChipTriggerZone : MonoBehaviour
 	public Boostrap boostrap;
 
     private MeshRenderer meshRenderer;
-	private int currentCount = 0;
+	public List<Chip> currentCount;
 	
 
 	private void Start()
 	{
 		meshRenderer = GetComponent<MeshRenderer>();
+		currentCount = new List<Chip>();
 		Hide();
 		HideButton();
 	}
@@ -24,7 +26,7 @@ public class ChipTriggerZone : MonoBehaviour
 
 	public void Show()
 	{
-		if (currentCount >= boostrap.round) { return; }
+		if (currentCount.Count >= boostrap.round) { return; }
 		meshRenderer.enabled = true;
 	}
 
@@ -32,7 +34,7 @@ public class ChipTriggerZone : MonoBehaviour
 	{
 		if (other.tag == "Chip")
 		{
-			currentCount++;
+			currentCount.Add(other.GetComponent<Chip>());
 
 			Chip chip = other.GetComponent<Chip>();
 			if (chip.players)
@@ -40,7 +42,7 @@ public class ChipTriggerZone : MonoBehaviour
 			else
 				boostrap.opponent.BetChip(chip.chipType);
 
-			if (currentCount == boostrap.round)
+			if (currentCount.Count == boostrap.round)
 			{
 				ShowButton();
 			}
@@ -55,7 +57,7 @@ public class ChipTriggerZone : MonoBehaviour
 	{
 		if (other.tag == "Chip")
 		{
-			currentCount--;
+			currentCount.Remove(other.GetComponent<Chip>());
 
 			Chip chip = other.GetComponent<Chip>();
 			if (chip.players)
@@ -64,11 +66,11 @@ public class ChipTriggerZone : MonoBehaviour
 				boostrap.opponent.BetChipCancel(chip.chipType);
             
 
-			if (currentCount == boostrap.round)
+			if (currentCount.Count == boostrap.round)
 			{
 				ShowButton();
 			}
-			else if (currentCount < boostrap.round) 
+			else if (currentCount.Count < boostrap.round) 
 			{
 				Show();
 				HideButton();
